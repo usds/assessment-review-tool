@@ -8,7 +8,7 @@ import {
   updateCompetencyEvaluationNote,
 } from "../../assessmentSlice";
 import PassFailJustification from "./PassFailJustificaiton";
-import { COMPETENCY_TYPES } from "../../../../constants";
+// import { COMPETENCY_TYPES } from "../../../../constants";
 import Textarea from "../../../commonComponents/Textarea";
 
 const PassFailJustificationContainer = ({ id }) => {
@@ -19,7 +19,7 @@ const PassFailJustificationContainer = ({ id }) => {
     definition,
     requiredProficiencyDefinition,
     selectors: allSelectors,
-    competencyType,
+    // competencyType,
     evaluation,
     justifications,
   } = competencyDetails;

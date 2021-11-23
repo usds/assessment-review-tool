@@ -4,12 +4,12 @@ import Accordion from "../../commonComponents/Accordion";
 import Alert from "../../commonComponents/Alert";
 import Button from "../../commonComponents/Button";
 
-const EvaluationNote = (evaluator, note) => (
-  <div key={evaluator}>
-    <h5> {evaluator} Note:</h5>
-    <p style={{ whiteSpace: "pre-wrap" }}>{note}</p>
-  </div>
-);
+// const EvaluationNote = (evaluator, note) => (
+//   <div key={evaluator}>
+//     <h5> {evaluator} Note:</h5>
+//     <p style={{ whiteSpace: "pre-wrap" }}>{note}</p>
+//   </div>
+// );
 const ResumeReview = ({
   progressBar,
   AssessmentAlert,
