@@ -1,0 +1,49 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+
+.smeqa-rr-home {
+  background-color: color($theme-color-smeqa-gray-light);
+}
+
+.smeqa-button--icon {
+  .svg-inline--fa {
+    margin-right: units(1);
+  }
+}
+
+// Footer Styles
+#smeqa-footer-logo {
+  max-width: 6rem;
+}
+
+.smeqa-footer-heading {
+  font-family: Public Sans Web, Source Sans Pro Web, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 1.2rem;
+  line-height: normal;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+// error alert margin
+.smeqa-error-alert {
+  margin-top: 2rem;
+}

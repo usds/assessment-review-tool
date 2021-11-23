@@ -26,7 +26,6 @@ lockbox/keys.enc
 lockbox/prod
 lockbox/staging
 
-_*
 # Actual data
 
 api/coverage
