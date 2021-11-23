@@ -35,8 +35,6 @@
     "start-js:dev": "INLINE_RUNTIME_CHUNK=false REACT_APP_ENV=staging react-scripts start",
     "test": "react-scripts test",
     "watch-css": "npm run build-css && node-sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ -o src/styles/ --watch --recursive src/scss/App.scss",
-    "deploy:staging": "npm run build:staging && cf push smeqa-staging",
-    "deploy:prod": "npm run build && cf push smeqa-prod",
     "build:development": "npm run build-css && bash ./scripts/build.sh --env production"
   },
   "eslintConfig": {
