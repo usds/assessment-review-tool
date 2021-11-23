@@ -46,8 +46,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-
-      - uses: citizen-of-planet-earth/cf-cli-action@master
+      - uses: ./.github/actions/cf-action
         with:
           api:      ${{ secrets.CF_API }}
           org:      ${{ secrets.CF_ORG }}
