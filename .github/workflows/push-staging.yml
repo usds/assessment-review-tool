@@ -42,14 +42,12 @@ jobs:
       - name: Build backend
         run: npm run build
         working-directory: api
-
   deploy:
     runs-on: ubuntu-latest
-    run: ls
-    run: pwd
     steps:
       - uses: actions/checkout@v2
-      - cmd:
+      - run: ls
+      - run: pwd
       - name: Deploy to cloud.gov
         uses: cloud-gov/cg-cli-tools@main
         with:
