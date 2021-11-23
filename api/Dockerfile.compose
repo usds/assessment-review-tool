@@ -1,0 +1,14 @@
+FROM node:14.17.3-alpine
+WORKDIR /opt/node_app/app
+
+COPY package.json package-lock.json ./
+COPY tsconfig.json ./
+
+RUN npm ci --no-optional
+
+COPY . .
+
+ENV PORT=9009
+EXPOSE 9009
+
+CMD ["npm", "run", "dev"]

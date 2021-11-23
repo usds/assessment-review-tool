@@ -1,0 +1,39 @@
+{
+  "userSetup": [
+    {
+      "role": 1,
+      "users": [
+        {
+          "email": "smeqa_reviewer@usds.gov",
+          "name": "Hr 1 Tester"
+        }
+      ]
+    },
+
+    {
+      "role": 2,
+      "users": [
+        {
+          "email": "smeqa_evaluator_one@usds.gov",
+          "name": "SME 1 Tester"
+        },
+        {
+          "email": "smeqa_evaluator_two@usds.gov",
+          "name": "SME 2 Tester"
+        },
+        {
+          "email": "smeqa_evaluator_three@usds.gov",
+          "name": "SME 3 Tester"
+        },
+        {
+          "email": "smeqa_evaluator_four@usds.gov",
+          "name": "SME 4 Tester"
+        },
+        {
+          "email": "smeqa_evaluator_five@usds.gov",
+          "name": "SME 5 Tester"
+        }
+      ]
+    }
+  ]
+}

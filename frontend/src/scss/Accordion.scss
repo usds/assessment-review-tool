@@ -1,0 +1,82 @@
+// Accordion styles
+
+.smeqa-rr-drawers .smeqa-rr-drawer {
+  margin-top: units(4);
+  margin-bottom: 0;
+
+  &.is-first {
+    margin-top: 0;
+  }
+}
+
+.smeqa-rr-drawers--no-faces .smeqa-rr-drawer--no-face {
+  margin-top: 0;
+}
+
+.smeqa-rr-drawer {
+  &__button {
+    background-color: color('white');
+    background-image: url("../img/drawer/minus-circle.svg");
+    background-position: 2px units(1.5);
+    background-size: units(2.5);
+    padding: units(1.5) units(1.5) units(0.5) units(4);
+    @include u-font-size('body', 'lg');
+    color: color('primary');
+
+    &[aria-expanded="false"] {
+      background-image: url("../img/drawer/plus-circle.svg");
+      background-size: units(2.5);
+    }
+
+    &:hover {
+      background-color: color('white');
+      color: color('primary-dark');
+    }
+  }
+
+  &__content {
+    background-color: transparent;
+  }
+}
+
+.smeqa-rr-drawer--no-face {
+  &__button {
+    background-color: transparent;
+    background-image: url("../img/drawer/minus-circle.svg");
+    background-position: center left;
+    background-size: units(2);
+    padding: units(0.5) units(1) units(0.5) units(2.5);
+    @include u-font-size('body', '2xs');
+    color: color('primary');
+
+    &[aria-expanded="false"] {
+      background-image: url("../img/drawer/plus-circle.svg");
+      background-size: units(2);
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: color('primary-dark');
+    }
+  }
+}
+
+.smeqa-rr-prof-level {
+  &__heading {
+    margin-top: units(1);
+  }
+}
+
+.smeqa-rr-drawer__content .smeqa-rr-prof-level__definition {
+  margin: units(0.5) 0 0 0;
+  max-width: inherit;
+}
+
+.smeqa-rr-hiring-action-accordion {
+  margin: units(3) 0;
+
+  .usa-accordion__content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

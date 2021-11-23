@@ -1,0 +1,28 @@
+
+.smeqa-radio--horizontal {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+
+  @include at-media('tablet') {
+    text-align: center;
+  }
+
+  &__container {
+    position: relative;
+    display: list-item;
+    width: 30%; 
+    max-width: 7rem; // deliberately keeping radios close together
+    float: left;
+    margin: 0;
+
+    @include at-media('tablet') {
+      width: 45%; 
+      max-width: 5rem;
+    }
+
+    &:first-child {
+      margin-right: units(1); // deliberately giving radios some separation
+    }
+  }
+}

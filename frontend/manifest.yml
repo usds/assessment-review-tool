@@ -1,0 +1,9 @@
+# Not in use anymore. This was used when the frontend was hosted on in its own app
+# applications:
+#   - name: smeqa-frontend
+#     path: build/
+#     memory: 64M
+#     # specify the buildpack to use
+#     # this can be used as an alternative if we don't have a Staticfile in the build directory
+#     # buildpacks:
+#     #   - https://github.com/cloudfoundry/staticfile-buildpack

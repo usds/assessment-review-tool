@@ -1,0 +1,18 @@
+{
+  "departmentName": "Office of Weaving",
+  "componentName": "Moirai Component",
+  "positionName": "Ruler of the Gods",
+  "assessmentName": "Resume Review",
+  "positionDetails": "(G1)",
+  "locations": "Olympus, Greece",
+  "startDatetime": "2020-12-16T21:00:00.000Z",
+  "endDatetime": "2020-01-22T21:00:00.000Z",
+  "hurdleDisplayType": 1,
+  "evaluationsRequired": 2,
+  "hrEmail": "zeus@olympus.com",
+  "hrName": "Zeus",
+  "vacancyId": "9999999999999999",
+  "assessmentId": "1234",
+  "passNor": "PASS",
+  "failNor": "FAIL"
+}

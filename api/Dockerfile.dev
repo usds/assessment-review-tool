@@ -1,0 +1,17 @@
+FROM node:12.16.2-alpine as builder
+
+COPY package.json package-lock.json ./
+COPY tsconfig.json ./
+
+RUN npm ci --no-optional && mkdir /api-build && mv ./node_modules ./api-build
+WORKDIR /api-build
+
+COPY . .
+
+RUN npm run build
+RUN rm -rf src/
+
+ENV PORT=9009
+EXPOSE 9009
+
+CMD ["npm", "run", "start"]

@@ -1,0 +1,74 @@
+.smeqa-rr-comps {
+  padding-left: 0;
+  padding-right: 0;
+
+  @include at-media("desktop") {
+    padding-left: units(4);
+    padding-right: units(4);
+  }
+
+  &__title--prof {
+    display: none;
+    margin-top: units(2);
+
+    @include at-media("tablet") {
+      display: block;
+    }
+  }
+}
+
+.smeqa-rr-comp,
+.smeqa-rr-exp {
+  @include u-padding(2);
+
+  @include at-media("desktop") {
+    @include u-padding-x(0);
+  }
+
+  &.does-not-meet {
+    background-color: color($theme-color-smeqa-red-lightest);
+  }
+
+  &__title--prof {
+    margin: units(2) 0;
+
+    @include at-media("tablet") {
+      display: none;
+    }
+  }
+
+  &__required-level {
+    margin-top: units(1);
+
+    & + p {
+      margin-top: units(1);
+    }
+  }
+
+  &__level {
+    margin-top: units(1);
+    max-width: inherit;
+  }
+}
+.does-not-meet ul {
+  background-color: color($theme-color-smeqa-red-lightest);
+}
+
+.smeqa-rr-row {
+  margin-top: units(3);
+  @include u-padding-x(2);
+
+  @include at-media("desktop") {
+    @include u-padding-x(0);
+  }
+
+  &__full-width {
+    width: 100%;
+  }
+}
+
+.smeqa-rr-col {
+  &__full-width {
+    width: 100%;
+  }
+}

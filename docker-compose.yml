@@ -1,0 +1,56 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile.compose
+    environment:
+      - DB_LOCAL_URI=postgres://docker_pg_user:docker_pg_pw@db:5432/docker_db
+      - NODE_ENV=docker
+      - PORT=9000
+      - APP_ENV=docker
+      - ADMIN_TOKEN=admin
+    volumes:
+      - ./api:/opt/node_app/app
+      - ./db:/opt/node_app/db
+      - /opt/node_app/app/node_modules
+    ports:
+      - 9000:9000
+      - 9229:9229
+    expose:
+      - 9000
+      - 9229
+    depends_on:
+      - db
+  frontend:
+    container_name: FE
+    stdin_open: true
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_ENV=docker
+      - CHOKIDAR_USEPOLLING=true
+      - PORT=8000
+    volumes:
+      - /opt/react_app/node_modules
+      - ./frontend:/opt/react_app
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    depends_on:
+      - api
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=docker_db
+      - POSTGRES_USER=docker_pg_user
+      - POSTGRES_PASSWORD=docker_pg_pw
+    ports:
+      - 5000:5432
+    expose:
+      - 5000
+    volumes:
+      - ./db/migrations/:/docker-entrypoint-initdb.d/

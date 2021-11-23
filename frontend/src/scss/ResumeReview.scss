@@ -1,0 +1,192 @@
+// ----------------------------------------
+// SME-QA: Resume Review layout
+
+.smeqa-rr {
+  &__main {
+    margin-top: 0;
+    padding-bottom: units(4);
+  }
+
+  &__title,
+  &__status {
+    @include u-font-size("body", "xs");
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: color("gold-20v");
+  }
+
+  &__status {
+    text-align: center;
+  }
+
+  &__applicant-name {
+    margin-top: 0;
+  }
+
+  &__applicant-name-desc {
+    font-weight: normal;
+  }
+
+  &__applicant-email {
+    margin: 0;
+    padding: units(0.5) 0 0;
+  }
+
+  &__missing-info-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__missing-info {
+    padding: units(0.5) 0;
+  }
+
+  &__next-applicant {
+    float: right;
+  }
+
+  &__exit-review-header {
+    margin-bottom: 2rem;
+  }
+
+  &__exit-review-header .smeqa-rr-nav__body {
+    justify-content: center;
+  }
+}
+
+.smeqa-rr-sme-progress-bar {
+  margin-bottom: units(2.5);
+}
+
+.smeqa-rr-instructions {
+  margin-top: units(1.5);
+}
+
+.smeqa-rr-instructions-text ol li {
+  max-width: 95%;
+  padding-bottom: 0.25rem;
+}
+
+.smeqa-rr-form .smeqa-rr__recuse.usa-button,
+.smeqa-rr-form .smeqa-rr__skip.usa-button {
+  width: 100%;
+  margin-top: units(1.5);
+}
+
+.smeqa-rr-form .smeqa-rr__joa-url {
+  display: block;
+  @include u-font-size("body", "lg");
+  margin: 0 units(1) units(1.5) 0;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: color($theme-link-color);
+  }
+}
+
+.smeqa-rr-form {
+  font-size: inherit;
+  line-height: inherit;
+
+  @include at-media("mobile-lg") {
+    max-width: inherit;
+  }
+
+  &.is-disabled {
+    opacity: 0.3;
+  }
+}
+
+.smeqa-rr-scoring {
+  &__save.is-final {
+    float: right;
+  }
+}
+
+.smeqa-rr-scoring-reason {
+  &__label {
+    margin-bottom: units(2);
+  }
+
+  .usa-textarea {
+    height: 4rem;
+  }
+}
+
+// TODO: Move to new component
+.smeqa-rr-progress {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 0 units(4) 0;
+  // max-width: 700px;
+
+  &__bar {
+    align-self: flex-start;
+    width: 100%;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: units(1);
+  }
+
+  &__detail {
+    margin: 0;
+    @include u-font-size("body", "2xs");
+  }
+
+  &__queue {
+    float: right;
+  }
+
+  .percentage {
+    font-size: 0.8em;
+    line-height: 1;
+    text-transform: uppercase;
+    width: 100%;
+    height: 25px;
+    background-color: color($theme-color-smeqa-gray-light);
+    /*
+    background: repeating-linear-gradient(
+    to right,
+    #ddd,
+    #ddd 1px,
+    #fff 1px,
+    #fff 5%
+  );
+  */
+
+    &:after {
+      content: "";
+      display: block;
+      background-color: color($theme-color-smeqa-green);
+      width: 50px;
+      height: 100%;
+      position: relative;
+      top: 0;
+      transform: translateY(-50%);
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        background-color: #aaa;
+      }
+    }
+  }
+
+  @for $i from 1 through 100 {
+    .percentage-#{$i} {
+      &:after {
+        $value: ($i * 1%);
+        width: $value;
+      }
+    }
+  }
+}

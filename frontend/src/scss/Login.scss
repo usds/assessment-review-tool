@@ -1,0 +1,59 @@
+// Homepage styles
+.smeqa-login-section {
+    margin: 7rem 0;
+}
+
+.smeqa-login {
+    font-size: 1.4rem;
+}
+
+p {
+    font-family: inherit;
+}
+
+.smeqa-login-intro {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.qa-links {
+    font-size: 0.8rem;
+}
+
+.smeqa-login-img {
+    max-width:14rem;
+    display: block;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 13px;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    background: #F1F1F1;
+    -moz-border-radius: 125px;
+    -webkit-border-radius: 125px;
+    border-radius: 125px;
+    float: right;
+ }
+
+ @media screen and (max-width: 768px) {
+
+    .circle {
+        display: none;
+    }
+
+    .smeqa-login-content {
+        width: 100%;
+    }
+
+    .smeqa-login-section {
+        margin: 3rem 0;
+    }
+
+    .smeqa-login-button {
+        width: 100%;
+    }
+
+}

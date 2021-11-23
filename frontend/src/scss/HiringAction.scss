@@ -1,0 +1,355 @@
+// Hiring action styles
+.smeqa-rr-home-hiring-action,
+.smeqa-rr-hiring-action {
+  width: 100%;
+
+  &__body {
+    @include at-media("tablet-lg") {
+      @include grid-row();
+      @include grid-gap(2);
+    }
+  }
+
+  &__col {
+    @include at-media("tablet-lg") {
+      @include grid-col(8);
+    }
+  }
+
+  &__col.right {
+    @include at-media("tablet-lg") {
+      @include grid-col(4);
+    }
+  }
+
+  &__button {
+    width: 100%;
+    line-height: 1.2;
+
+    @include at-media("mobile-lg") {
+      width: 40%;
+    }
+
+    @include at-media("tablet-lg") {
+      width: 100%;
+    }
+  }
+}
+
+.smeqa-rr-home-hiring-action {
+  @include grid-col(12);
+  @include boxShadow(1);
+  background-color: #fff;
+
+  &__container {
+    margin: units(2) 0;
+
+    @include at-media("mobile-lg") {
+      margin: units(3) units(2);
+    }
+  }
+
+  &__body {
+    padding: units(3) units(4);
+  }
+
+  &__title {
+    @include u-font-size("body", "lg");
+    font-weight: bold;
+  }
+
+  &__agency {
+    @include u-font-size("body", "md");
+    margin: units(1) 0 units(5);
+  }
+
+  &__component {
+    @include u-font-size("body", "sm");
+    margin: 0 0 units(0.5);
+  }
+
+  &__locations {
+    @include u-font-size("body", "sm");
+    margin: 0;
+    font-weight: normal;
+  }
+  &__metrics {
+    @include u-font-size("body", "sm");
+    margin: units(0.5);
+    text-align: center;
+  }
+
+  &__button-container {
+    display: block;
+    width: 100%;
+    margin-bottom: units(2);
+
+    @include at-media("mobile") {
+      margin-top: units(4);
+    }
+
+    @include at-media("tablet-lg") {
+      margin-top: 0;
+    }
+  }
+
+  &__create {
+    display: block;
+    width: 100%;
+    margin-top: units(2);
+
+    @include at-media("mobile-lg") {
+      margin: units(3) units(2);
+    }
+  }
+}
+
+.smeqa-rr-hiring-action {
+  &__container {
+    margin: units(2) 0;
+
+    @include at-media("mobile-lg") {
+      margin: units(3) 0;
+    }
+  }
+
+  &__body {
+    padding: units(3) 0;
+  }
+
+  &__title {
+    @include u-font-size("body", "xl");
+    margin: 0;
+    color: color($theme-color-smeqa-blue-darkest);
+  }
+
+  &__agency {
+    @include u-font-size("body", "xs");
+    margin: 0;
+    color: color($theme-color-smeqa-blue-cool-dark);
+  }
+
+  &__gs-level {
+    margin: units(1) 0;
+  }
+
+  &__button {
+    margin: units(2.5) 0;
+  }
+}
+
+.smeqa-rr-hiring-action-justifications {
+  @include grid-col(12);
+}
+
+.smeqa-rr-hiring-action-justification {
+  border: 1px solid color($theme-color-smeqa-gray-light);
+  border-bottom-width: 0px;
+  margin: units(0) units(1) units(2) units(1);
+  padding: units(2) units(1) units(0) units(1);
+
+  &:last-child {
+    border-bottom-width: 1px;
+  }
+
+  &__body {
+    padding: units(1.5) units(2.5);
+
+    @include at-media("tablet-lg") {
+      @include grid-row();
+    }
+  }
+
+  &__section-head {
+    margin-bottom: units(2.5);
+  }
+
+  &__col {
+    @include at-media("tablet-lg") {
+      @include grid-col(8);
+    }
+  }
+
+  &__col.right {
+    @include at-media("tablet-lg") {
+      @include grid-col(4);
+      text-align: center;
+    }
+  }
+
+  &__top-row {
+    @include grid-row();
+    @include grid-gap(1);
+    margin-bottom: units(2.5);
+    width: 100%;
+  }
+
+  &__top-row-item {
+    @include grid-col(3);
+
+    @include at-media("mobile-lg") {
+      @include grid-col(3);
+    }
+
+    @include at-media("tablet") {
+      @include grid-col(3);
+    }
+  }
+
+  &__top-row-title,
+  &__top-row-value,
+  &__review-date {
+    margin: 0 0 units(1);
+
+    @include at-media("mobile-lg") {
+      margin: 0;
+    }
+  }
+
+  &__top-row-title,
+  &__text-row-title {
+    color: color($theme-color-smeqa-blue-cool-dark);
+  }
+
+  &__text-row {
+    margin-bottom: units(1.5);
+    width: 100%;
+  }
+
+  &__text {
+    margin: 0 0 units(1) 0;
+    max-width: inherit;
+  }
+
+  &__reveal-applicant,
+  &__send-feedback,
+  &__cancel {
+    @include permaLink();
+  }
+
+  &__review-date {
+    @include u-font-size("body", "2xs");
+    text-align: right;
+    max-width: inherit;
+  }
+
+  &__button {
+    margin: units(2) 0;
+
+    @include at-media("tablet-lg") {
+      margin-top: 0;
+    }
+  }
+
+  &__button.validate {
+    @include at-media("mobile-lg") {
+      margin: inherit;
+      margin-bottom: units(1);
+    }
+  }
+
+  &__button.invalidate {
+    @include at-media("tablet-lg") {
+      margin: inherit;
+    }
+  }
+
+  &__status-container {
+    @include at-media("mobile-lg") {
+      @include grid-row();
+      @include grid-gap(1);
+      flex-direction: row-reverse;
+    }
+
+    @include at-media("tablet-lg") {
+      flex-direction: row;
+    }
+  }
+
+  &__edit {
+    @include at-media("mobile-lg") {
+      @include grid-col(8);
+    }
+
+    @include at-media("tablet-lg") {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__status {
+    margin: units(2) 0;
+
+    @include at-media("mobile-lg") {
+      @include grid-col(4);
+      margin: 0;
+    }
+
+    @include at-media("tablet-lg") {
+      width: 100%;
+      margin-bottom: units(4);
+    }
+  }
+
+  &__status-valid,
+  &__status-invalid {
+    margin-left: auto;
+    margin-right: auto;
+    padding: units(0.5) 0;
+    text-align: center;
+    border-radius: 3px;
+    max-width: 110px;
+  }
+
+  &__status-valid {
+    background-color: color($theme-color-smeqa-green-dark);
+  }
+
+  &__status-invalid {
+    background-color: color($theme-color-smeqa-red-dark);
+  }
+
+  &__status-text {
+    color: #fff;
+  }
+
+  &__send-feedback {
+    display: block;
+    padding: units(1.5) units(1.5) units(1.5) 0;
+    color: color($theme-color-primary);
+    text-decoration: underline;
+
+    @include at-media("tablet-lg") {
+      padding-left: units(1.5);
+    }
+  }
+
+  &__sme-note-row {
+    margin-bottom: units(4);
+
+    @include at-media("tablet-lg") {
+      margin-bottom: 0;
+    }
+  }
+
+  &__textarea {
+    margin-bottom: units(1.5);
+    max-width: inherit;
+  }
+
+  &__sme-note-help {
+    margin: 0 0 units(2.5) 0;
+    @include u-font-size("body", "2xs");
+    max-width: inherit;
+
+    @include at-media("tablet-lg") {
+      margin: 0;
+    }
+  }
+
+  &__send-btn {
+    @include at-media("tablet-lg") {
+      float: right;
+    }
+  }
+}

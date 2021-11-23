@@ -1,0 +1,10 @@
+{
+  "specialties": [
+    {
+      "name": "Core specialty GS 13",
+      "pointsRequired": 6,
+      "localId": "0000-00(Ruler-of-the-gods)",
+      "competencyLocalIds": ["core_clever", "core_epic", "core_expectations", "core_human", "experience_immortal", "experience_festivals"]
+    }
+  ]
+}

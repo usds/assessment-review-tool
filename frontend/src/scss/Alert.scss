@@ -1,0 +1,18 @@
+// Alert styles
+
+.smeqa-alert {
+  // USWDS are missing these two directives which prevent 
+  // the table cell from being full width
+  display: table;
+  width: 100%; 
+  margin-bottom: units(4);
+
+  &__footer {
+    margin-top: units(3);
+    text-align: right;
+  }
+}
+
+.smeqa-alert[aria-hidden=true] {
+  display: none;
+}

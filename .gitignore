@@ -1,0 +1,34 @@
+.env
+.vscode
+.DS_Store
+
+node_modules/
+
+lockbox
+
+client/
+*.css
+
+dev*
+prod*
+stage*
+
+
+combined.log
+error.log
+audit.log
+
+coverage
+scratch
+
+# keys
+lockbox/keys.enc
+lockbox/prod
+lockbox/staging
+
+_*
+# Actual data
+
+api/coverage
+api/tmp
+api/logs

@@ -1,0 +1,41 @@
+html, body, #root, .App, ._loading_overlay_wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#main-wrapper, .main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+/*
+
+To work correctly, the page layout should look something like this:
+
+<html>
+  <body>
+    <div class="App">
+      <div id="main-wrapper">
+        <Banner />
+        <Header />
+        <main>
+          [ .. page content goes here .. ]
+        </main>
+        </div>
+        <Footer />
+      </div>
+    </div>
+  </body>
+<html>
+
+- #main-wrapper is the flexbox container
+- banner, banner, main and footer must be direct children of #main-wrapper
+- #main-wrapper and all descendents must be 100% height
+
+*/

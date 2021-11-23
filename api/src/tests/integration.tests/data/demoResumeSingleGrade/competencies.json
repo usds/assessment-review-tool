@@ -1,0 +1,144 @@
+{
+  "competencies": [
+    {
+      "name": "Cleverness",
+      "localId": "core_clever",
+      "definition": "The ideal candidate has an abundance of cleverness... \n\n similar to that of Odysseus during his trials.",
+      "requiredProficiencyDefinition": "Candidate shows a history of clever ideas, such as: \n\n - Trojan Horses \n - Escaping Cyclops \n - Surving Sirens",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "Yes",
+          "pointValue": 1
+        },
+        {
+          "displayName": "No evidence of this competency",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Candidate resume shows no evidence of improvisation"
+        },
+        {
+          "displayName": "Doesn’t meet the required proficiency level",
+          "pointValue": 0,
+          "sortOrder": 2,
+          "defaultText": ""
+        }
+      ]
+    },
+    {
+      "name": "Epic",
+      "localId": "core_epic",
+      "definition": "The ideal candidate should have experience inspiring stories and songs about them; ideally through an oral history.",
+      "requiredProficiencyDefinition": "Has had at least one great feat that people are aware of.",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "Yes",
+          "pointValue": 1
+        },
+        {
+          "displayName": "No evidence of this competency",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Candidate resume has no known feats."
+        },
+        {
+          "displayName": "Doesn’t meet the required proficiency level",
+          "pointValue": 0,
+          "sortOrder": 2,
+          "defaultText": ""
+        }
+      ]
+    },
+    {
+      "name": "Managing Supplicant Expectations",
+      "localId": "core_expectations",
+      "definition": "The ideal candidate has experience ensuring that supplicants do not have their expectations failed when asking for help.",
+      "requiredProficiencyDefinition": "Does not have a reputation for ignoring those in need.",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "Yes",
+          "pointValue": 1
+        },
+        {
+          "displayName": "No evidence of this competency",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Candidate resume shows no evidence of helping those in need."
+        },
+        {
+          "displayName": "Doesn’t meet the required proficiency level",
+          "pointValue": 0,
+          "sortOrder": 2,
+          "defaultText": ""
+        }
+      ]
+    },
+    {
+      "name": "Human Centered",
+      "localId": "core_human",
+      "definition": "The ideal candidate focuses their efforts on the mortal struggle. The ideal applicant frequently transforms into human form to experience life as one of the people.",
+      "requiredProficiencyDefinition": "Has in-depth knowledge of the hopes, dreams, struggles, and tribulations of the human plight.",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "Yes",
+          "pointValue": 1
+        },
+        {
+          "displayName": "No evidence of this competency",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Candidate resume only shows concern for the supernatural."
+        },
+        {
+          "displayName": "Doesn’t meet the required proficiency level",
+          "pointValue": 0,
+          "sortOrder": 2,
+          "defaultText": ""
+        }
+      ]
+    },
+    {
+      "name": "52 weeks of being immortal",
+      "localId": "experience_immortal",
+      "definition": "",
+      "requiredProficiencyDefinition": "The applicant has at least 52 weeks of experience being immortal.",
+      "displayType": 2,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "Yes",
+          "pointValue": 1
+        },
+        {
+          "displayName": "No",
+          "pointValue": 0
+        }
+      ]
+    },
+    {
+      "name": "Festivals",
+      "localId": "experience_festivals",
+      "definition": "",
+      "requiredProficiencyDefinition": "The applicant has at least one fesitval in their name.",
+      "displayType": 2,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "Yes",
+          "pointValue": 1
+        },
+        {
+          "displayName": "No",
+          "pointValue": 0
+        }
+      ]
+    }
+  ]
+}
