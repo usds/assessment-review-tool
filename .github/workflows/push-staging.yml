@@ -46,11 +46,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    steps:
       - uses: ./.github/actions/cf-action
         with:
-          api:      ${{ secrets.CF_API }}
-          org:      ${{ secrets.CF_ORG }}
-          space:    ${{ secrets.CF_SPACE }}
+          api: ${{ secrets.CF_API }}
+          org: ${{ secrets.CF_ORG }}
+          space: ${{ secrets.CF_SPACE }}
           username: ${{ secrets.CF_USERNAME }}
           password: ${{ secrets.CF_PASSWORD }}
           manifest: stage-manifest.yml
