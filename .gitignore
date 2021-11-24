@@ -7,7 +7,6 @@ node_modules/
 lockbox
 
 client/
-*.css
 
 dev*
 prod*
