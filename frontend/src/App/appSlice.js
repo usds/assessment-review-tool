@@ -2,11 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { requestCurrentUser, getCurrentVersion } from "./appRequests";
 import { fetchHiringActions } from "./HiringActions/hiringActionSlice";
 import { dispatch } from "../store";
-// const fakeTimer = () => {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(resolve, 2000);
-//   });
-// };
+
 export const login = createAsyncThunk("app/login", async () => {
   const buildVersion = await getCurrentVersion();
   const user = await requestCurrentUser();
