@@ -6,7 +6,7 @@ services:
       context: api
       dockerfile: Dockerfile.compose
     environment:
-      - POSTGRES_URI=postgres://docker_pg_user:docker_pg_pw@db:5432/docker_db
+      - DB_LOCAL_URI=postgres://docker_pg_user:docker_pg_pw@db:5432/docker_db
       - NODE_ENV=docker
       - PORT=9000
       - APP_ENV=docker

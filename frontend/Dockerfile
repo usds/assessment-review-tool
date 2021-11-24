@@ -8,16 +8,17 @@ WORKDIR ${WKDIR}
 
 
 # RUN npm install -g node-sass
-RUN npm -g i react-scripts@3.4.1
-RUN npm -g i serve
+RUN yarn global add react-scripts@3.4.1
+RUN yarn global add serve
 
 COPY package*.json .
+COPY yarn.lock .
 
-RUN npm ci
+RUN yarn install --frozen-lockfile
 
 ENV PATH ${WKDIR}/node_modules/.bin:$PATH
 
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

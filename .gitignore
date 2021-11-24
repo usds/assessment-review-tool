@@ -7,6 +7,7 @@ node_modules/
 lockbox
 
 client/
+*.css
 
 dev*
 prod*
@@ -25,6 +26,7 @@ lockbox/keys.enc
 lockbox/prod
 lockbox/staging
 
+_*
 # Actual data
 
 api/coverage
