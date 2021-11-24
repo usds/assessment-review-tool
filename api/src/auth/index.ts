@@ -45,7 +45,11 @@ passport.deserializeUser(async (id: string, done) => {
 });
 
 export default async function authSetup() {
-  const oidcLoa1Strat = await generateStrategy();
-  passport.use('oidc-loa-1', oidcLoa1Strat);
+  try {
+    const oidcLoa1Strat = await generateStrategy();
+    passport.use('oidc-loa-1', oidcLoa1Strat);
+  } catch (err) {
+    logger.error('Error setting up login.gov');
+  }
   passport.use('token-login', demoStrategy);
 }

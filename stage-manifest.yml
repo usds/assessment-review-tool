@@ -1,0 +1,26 @@
+version: 1
+applications:
+  - name: smeqa-staging
+    instances: 1
+    memory: 128MB
+    #health-check-type: http
+    #health-check-http-endpoint: /api/admin/health
+    env:
+      NODE_ENV: production
+      APP_ENV: staging
+      OPTIMIZE_MEMORY: true
+      TZ: America/New_York
+      AUTH_CALLBACK_ROOT_URL: https://smeqa-staging.app.cloud.gov
+      LOG_LEVEL: trace
+      REDIRECT_URI: https://smeqa-staging.app.cloud.gov/login/auth
+    command: node server.js
+    type: nodejs
+    path: ./api/build
+    # properties:
+    #   router:
+    #     tracing:
+    #       enable_zipkin: true
+    buildpack: nodejs_buildpack
+    stack: cflinuxfs3
+    services:
+      - smeqa-stage-db

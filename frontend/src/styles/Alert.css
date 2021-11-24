@@ -1,0 +1,13 @@
+.smeqa-alert {
+  display: table;
+  width: 100%;
+  margin-bottom: units(4);
+}
+.smeqa-alert__footer {
+  margin-top: units(3);
+  text-align: right;
+}
+
+.smeqa-alert[aria-hidden="true"] {
+  display: none;
+}

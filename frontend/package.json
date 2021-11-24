@@ -26,7 +26,7 @@
     "build": "npm run build:prod",
     "build-css": "node-sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ --output-style compressed -o src/styles/ src/scss/App.scss",
     "build:prod": "REACT_APP_ENV=production npm run build:assets",
-    "build:staging": "REACT_APP_ENV=staging npm run build:assets",
+    "build:stage": "REACT_APP_ENV=staging npm run build:assets",
     "build:finish": "rm -rf ../api/src/client && mkdir -p ../api/src/client/ && mv build/* ../api/src/client/",
     "build:assets": "npm run build-css && INLINE_RUNTIME_CHUNK=false react-scripts build && npm run build:finish",
     "start": "npm-run-all -p watch-css start-js",
@@ -35,9 +35,9 @@
     "start-js:dev": "INLINE_RUNTIME_CHUNK=false REACT_APP_ENV=staging react-scripts start",
     "test": "react-scripts test",
     "watch-css": "npm run build-css && node-sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ -o src/styles/ --watch --recursive src/scss/App.scss",
-    "deploy:staging": "npm run build:staging && cf push smeqa-staging",
-    "deploy:prod": "npm run build && cf push smeqa-prod",
-    "build:development": "npm run build-css && bash ./scripts/build.sh --env production"
+    "build:development": "npm run build-css && bash ./scripts/build.sh --env production",
+    "lint:check": "npm eslint && npm prettier --check .",
+    "lint:fix": "npm prettier --write ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,9 +58,18 @@
   "devDependencies": {
     "babel-plugin-macros": "^2.8.0",
     "cookiejar": "^2.1.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "http-proxy-middleware": "^2.0.1",
     "node-sass": "^6.0.1",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.4.1",
     "react-scripts": "^4.0.3",
     "require-context.macro": "^1.2.2",
     "serve": "^12.0.0",
