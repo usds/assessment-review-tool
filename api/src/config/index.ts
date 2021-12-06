@@ -45,12 +45,12 @@ try {
 // These users don't exist in prod - so :shrug:
 // You _have_ to put in an admin token to populate your local DB.
 const headerTokenString = {
-  evaluator_one: 'evaluator_one' + process.env.DEMO_TOKEN,
-  evaluator_two: 'evaluator_two' + process.env.DEMO_TOKEN,
-  evaluator_three: 'evaluator_three' + process.env.DEMO_TOKEN,
-  evaluator_four: 'evaluator_four' + process.env.DEMO_TOKEN,
-  evaluator_five: 'evaluator_five' + process.env.DEMO_TOKEN,
-  reviewer: 'reviewer' + process.env.DEMO_TOKEN,
+  evaluator_one: 'evaluator_one' + process.env.DEMO_TOKEN || '',
+  evaluator_two: 'evaluator_two' + process.env.DEMO_TOKEN || '',
+  evaluator_three: 'evaluator_three' + process.env.DEMO_TOKEN || '',
+  evaluator_four: 'evaluator_four' + process.env.DEMO_TOKEN || '',
+  evaluator_five: 'evaluator_five' + process.env.DEMO_TOKEN || '',
+  reviewer: 'reviewer' + process.env.DEMO_TOKEN || '',
   admin: process.env?.ADMIN_TOKEN || null,
 };
 
