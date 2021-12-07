@@ -78,6 +78,20 @@ export default class EvaluationService {
           `Applicant is not part of the assessment hurdle. ApplicantId: ${applicant?.id}; assessmentHurdleId: ${assessmentHurdleId}`,
         );
       }
+      const assignment = await ApplicationAssignments.findOne({
+        where: {
+          assessment_hurdle_id: assessmentHurdleId,
+          evaluator_id: evaluatorId,
+          applicant_id: applicant.id!,
+        },
+        attributes: ['active'],
+      });
+      if (!assignment || !assignment.active!) {
+        throw new HttpException(
+          400,
+          `Applicant was removed from your assignment queue. This is likely because another SME finished their evaluation before you of this applicant or the reviewers updated the evaluation and accepted your previous justifications. Continue to the next applicant and reach out to your point of contact if you have concerns.`,
+        );
+      }
 
       const allApplications = await Application.findAll({
         where: { applicant_id: applicantId },
@@ -472,23 +486,23 @@ export default class EvaluationService {
         `Reviewer is unauthorized on applicant set. Reviewer: ${reviewerId} Applicant set: ${JSON.stringify(body.evaluationId)}`,
       );
     }
-    const currentEvals = await ApplicationEvaluation.findAll({
-      where: {
-        id: body.evaluationId,
-      },
-    });
-    // You can only update if the current evaluation is either false or there is no evaluation. Unapproved applications must be returned by the SME.
-    const canBeUpdated = currentEvals
-      .map(ce => ce.approved)
-      .reduce((memo, approved) => {
-        if (!memo) return memo;
-        if (approved === false) return false;
-        return true;
-      }, true);
+    // const currentEvals = await ApplicationEvaluation.findAll({
+    //   where: {
+    //     id: body.evaluationId,
+    //   },
+    // });
+    // // You can only update if the current evaluation is either false or there is no evaluation. Unapproved applications must be returned by the SME.
+    // const canBeUpdated = currentEvals
+    //   .map(ce => ce.approved)
+    //   .reduce((memo, approved) => {
+    //     if (!memo) return memo;
+    //     if (approved === false) return false;
+    //     return true;
+    //   }, true);
 
-    if (!canBeUpdated && body.review) {
-      throw new HttpException(400, `Review was previously invalidated and must be resubmitted by applicant before it can be updated.`);
-    }
+    // if (!canBeUpdated && body.review) {
+    //   throw new HttpException(400, `Review was previously invalidated and must be resubmitted by applicant before it can be updated.`);
+    // }
     const [num, updated] = await ApplicationEvaluation.update(
       {
         approved: body.review,
@@ -502,14 +516,12 @@ export default class EvaluationService {
     await Promise.all(body.evaluationId.map(async id => await db.auditQuery(`SELECT "audit_evaluation"('${id}');`)));
     const appEval = updated[0];
     const application = await appEval.getApplication();
-    if (!body.review) {
-      await ApplicationAssignments.upsert({
-        active: true,
-        assessment_hurdle_id: assessmentHurdleId,
-        evaluator_id: appEval.evaluator!,
-        applicant_id: application.applicant_id!,
-      });
-    }
+    await ApplicationAssignments.upsert({
+      active: !body.review,
+      assessment_hurdle_id: assessmentHurdleId,
+      evaluator_id: appEval.evaluator!,
+      applicant_id: application.applicant_id!,
+    });
     logger.debug(`Review Submission updated ${num} ApplicationEvaluation for ${body.evaluationId}`);
     return updated[0];
   }

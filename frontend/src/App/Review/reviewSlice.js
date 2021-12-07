@@ -54,7 +54,7 @@ export const loadHiringActionDetails = createAsyncThunk(
           break;
         case false:
           assessmentStatus = HR_COMPETENCY_REVIEW_STATES.HR_DENIED;
-          editingStatus = HR_EDITING_STATUS.NONE;
+          editingStatus = HR_EDITING_STATUS.SHOW_EDIT_BUTTON;
           feedBackStatus = FEEDBACK_EDITING_STATUS.SHOW_FEEDBACK_BUTTON;
           assessmentGroup = ASSESSMENT_GROUPS.INVALID;
 
@@ -281,7 +281,7 @@ export const review = createSlice({
           break;
         case false:
           assessmentStatus = HR_COMPETENCY_REVIEW_STATES.HR_DENIED;
-          editingStatus = HR_EDITING_STATUS.NONE;
+          editingStatus = HR_EDITING_STATUS.SHOW_EDIT_BUTTON;
           feedBackStatus = FEEDBACK_EDITING_STATUS.SHOW_FEEDBACK_BUTTON;
           break;
         default:
