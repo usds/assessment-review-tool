@@ -95,7 +95,6 @@ jobs:
 
       - name: Whereami?
         run: pwd
-        working-directory: api
 
       # - name: Update Login.gov creds on cloud.gov
       #   uses: cloud-gov/cg-cli-tools@main
