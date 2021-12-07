@@ -140,7 +140,7 @@ export default class AssessmentHurdleService {
           model: AppUser as any,
           required: true,
           as: 'Evaluator',
-          attributes: ['email'],
+          attributes: ['email', 'id'],
         },
       ],
     });
