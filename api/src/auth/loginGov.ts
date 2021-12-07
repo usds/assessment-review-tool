@@ -1,5 +1,4 @@
 import crypto from 'crypto';
-import fs from 'fs';
 
 import { Client, ClientMetadata, Issuer, Strategy } from 'openid-client';
 import jose from 'node-jose';
@@ -9,9 +8,7 @@ import { logger } from '../utils/logger';
 import { LoginUserDetails } from '../interfaces/loginUser.interface';
 import { AppUser } from '../models/app_user';
 import UserService from '../services/users.service';
-// const { KEYFILE } = require('../../constants')
 
-// const { devStrategy, demoStrategy } = require('./dev');
 const logoutObject: { issuer: Issuer<Client> | null } = { issuer: null };
 async function generateStrategy() {
   const userService = new UserService();
