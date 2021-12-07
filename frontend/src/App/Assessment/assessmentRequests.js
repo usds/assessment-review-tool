@@ -22,11 +22,12 @@ export const requestApplicationDisplay = async (
   applicantId
 ) => {
   const url = `/api/evaluation/${assessmentHurdleId}/display/${applicantId}`;
-  const { data: application } = await fetch(url).then((r) => {
+  const { data: application } = await fetch(url).then(async (r) => {
     if (r.ok) {
       return r.json();
     } else {
-      throw new Error("Could not fetch applicant info");
+      const { message } = await r.json();
+      throw new Error(message);
     }
   });
   // return assessmentStub.data;
