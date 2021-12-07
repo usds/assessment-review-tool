@@ -6,6 +6,7 @@
       "definition": "Ability to approach problems quantitatively by defining and tracking key metrics to make data-driven decisions.",
       "requiredProficiencyDefinition": "Breaks problems down into component parts. Displays repeated experience in qualitative and quantitative analysis. Defines product or project metrics beyond the basics and ties these metrics to decisions. \n\n Anticipates the need for metrics and analysis early in the product and project discovery and design process, and carries metrics through iterations.",
       "displayType": 1,
+      "sortOrder": 1,
       "screenOut": true,
       "selectors": [
         {
@@ -15,7 +16,7 @@
           "pointValue": 1
         },
         {
-          "displayName": "Ye 2s",
+          "displayName": "Yes 2",
           "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
           "sortOrder": 2,
           "pointValue": 1
