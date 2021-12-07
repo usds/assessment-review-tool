@@ -20,7 +20,7 @@ applications:
       # LOGIN_KEY:
     command: node server.js
     type: nodejs
-    path: ./build
+    path: ./api/build
     # properties:
     #   router:
     #     tracing:
