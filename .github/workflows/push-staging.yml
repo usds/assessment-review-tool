@@ -4,7 +4,6 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [stage, 0kl/cachingAction]
 
@@ -45,7 +44,7 @@ jobs:
         working-directory: frontend
 
       - name: Build frontend
-        run: npm build:stage
+        run: npm run build:stage
         working-directory: frontend
 
       # Build backend
