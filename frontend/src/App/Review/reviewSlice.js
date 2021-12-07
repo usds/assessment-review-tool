@@ -345,7 +345,7 @@ export const selectReviewStatus = (state) => {
 };
 export const selectReviews = (state) => {
   return Object.values(state.review.applicantEvaluations).sort((a, b) =>
-    a.applicantName.localeCompare(b)
+    a.applicantName.localeCompare(b.applicantName)
   );
 };
 export const selectPendingReviews = (state) => {

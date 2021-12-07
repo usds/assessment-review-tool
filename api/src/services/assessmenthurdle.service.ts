@@ -11,6 +11,7 @@ import { Application } from '../models/application';
 import { AssessmentHurdleUser } from '../models/assessment_hurdle_user';
 import { ApplicationEvaluation } from '../models/application_evaluation';
 import { Competency } from '../models/competency';
+import { AppUser } from '../models/app_user';
 
 import CreateAssessmentHurdleDto from '../dto/createassessmenthurdle.dto';
 import HrDisplayDto, { ApplicationHrEvaluationDto, CompetencyHrEvaluationDto } from '../dto/hrdisplay.dto';
@@ -135,6 +136,12 @@ export default class AssessmentHurdleService {
           attributes: ['application_evaluation_id', 'competency_evaluation_id'],
           include: [{ model: CompetencyEvaluation as any, required: true }],
         },
+        {
+          model: AppUser as any,
+          required: true,
+          as: 'Evaluator',
+          attributes: ['email'],
+        },
       ],
     });
 
@@ -179,15 +186,16 @@ export default class AssessmentHurdleService {
       await Promise.all(
         applicationEvaluations.map(async ae => {
           const applicantId = applicantByApplicationId[ae.application_id!].applicantId;
-          const evaluator = ae.evaluator!;
-          const applicantEvaluationKey = applicantId + evaluator;
+          const evaluator = ae.Evaluator!;
+          const applicantEvaluationKey = applicantId + evaluator.id;
 
           const applicationEvaluation = {} as ApplicationHrEvaluationDto;
           applicationEvaluation.applicantEvaluationKey = applicantEvaluationKey;
           applicationEvaluation.approved = ae.approved!;
           applicationEvaluation.applicationIds = [ae.id];
           applicationEvaluation.evaluation_note = ae.evaluation_note!;
-          applicationEvaluation.evaluator = evaluator;
+          applicationEvaluation.evaluator = evaluator.id;
+          applicationEvaluation.evaluator_email = evaluator.email;
           applicationEvaluation.created_at = ae.created_at!.toLocaleDateString('en-US', {
             month: 'long',
             day: 'numeric',
