@@ -93,9 +93,6 @@ jobs:
         run: npm run build
         working-directory: api
 
-      - name: Whereami?
-        run: pwd
-
       # - name: Update Login.gov creds on cloud.gov
       #   uses: cloud-gov/cg-cli-tools@main
       #   with:
