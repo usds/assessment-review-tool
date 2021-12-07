@@ -110,4 +110,4 @@ jobs:
           cf_password: ${{secrets.STAGE_CF_PASSWORD}}
           cf_org: gsa-open-opportunities
           cf_space: USDS
-          cf_manifest: ./manifests/deployStage.yml
+          cf_manifest: ./cf_manifests/deployStage.yml
