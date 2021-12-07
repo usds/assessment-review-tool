@@ -1,0 +1,31 @@
+version: 1
+applications:
+  - name: smeqa-rr
+    instances: 2
+    memory: 128MB
+    #health-check-type: http
+    #health-check-http-endpoint: /api/admin/health
+    env:
+      APP_ENV: production # this is used to point to different APIs/DBs/etc
+      AUTH_CALLBACK_URL_ROOT: https://smeqa-rr.app.cloud.gov
+      REDIRECT_URI: https://smeqa-rr.app.cloud.gov/login/auth
+      ISSUER_DISCOVER: https://secure.login.gov
+      NODE_ENV: production
+      OPTIMIZE_MEMORY: true
+      TZ: America/New_York
+      # These are purposefully blank, push directly to cloud foundry.
+      # CLIENT_ID:
+      # SESSION_KEY:
+      # ADMIN_TOKEN:
+      # LOGIN_KEY:
+    command: node server.js
+    type: nodejs
+    path: ./build
+    # properties:
+    #   router:
+    #     tracing:
+    #       enable_zipkin: true
+    buildpack: nodejs_buildpack
+    stack: cflinuxfs3
+    services:
+      - smeqa-prod-db
