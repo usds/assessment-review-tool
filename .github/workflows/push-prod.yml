@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy Main
+name: Deploy Prod
 
 # Controls when the workflow will run
 on:
@@ -102,4 +102,4 @@ jobs:
           cf_org: gsa-open-opportunities
           cf_space: USDS
           cf_manifest: prod-manifest.yml
-          cf_command: cf push smeqa-rr -f prod-manifest.yml --strategy rolling -i 2
+          cf_command: push smeqa-rr -f prod-manifest.yml --strategy rolling -i 2
