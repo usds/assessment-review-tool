@@ -13,6 +13,9 @@ export default class AuditFileDto {
   @IsString()
   public applicantId = '';
 
+  @IsString()
+  public applicantStaffingId = '';
+
   @IsNumber()
   public flagType = 0;
 
