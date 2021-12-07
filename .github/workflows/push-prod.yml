@@ -101,5 +101,5 @@ jobs:
           cf_password: ${{secrets.PROD_CF_PASSWORD}}
           cf_org: gsa-open-opportunities
           cf_space: USDS
-          cf_manifest: prod-manifest.yml
-          cf_command: push smeqa-rr -f prod-manifest.yml --strategy rolling -i 2
+          cf_manifest: deployProd.yml
+          cf_command: push smeqa-rr -f deployProd.yml --strategy rolling -i 2
