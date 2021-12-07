@@ -24,11 +24,11 @@
   },
   "scripts": {
     "build": "npm run build:prod",
-    "build-css": "node-sass -q --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ --output-style compressed -o src/styles/ src/scss/App.scss",
+    "build:styles": "node-sass -q --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ --output-style compressed -o src/styles/ src/scss/App.scss",
     "build:prod": "REACT_APP_ENV=production npm run build:assets",
     "build:stage": "REACT_APP_ENV=staging npm run build:assets",
     "build:finish": "rm -rf ../api/src/client && mkdir -p ../api/src/client/ && mv build/* ../api/src/client/",
-    "build:assets": "npm run build-css && INLINE_RUNTIME_CHUNK=false react-scripts build && npm run build:finish",
+    "build:assets": "INLINE_RUNTIME_CHUNK=false react-scripts build && npm run build:finish",
     "start": "npm-run-all -p watch-css start-js",
     "start:dev": "npm-run-all -p watch-css start-js:dev ",
     "start-js": "INLINE_RUNTIME_CHUNK=false react-scripts start",
