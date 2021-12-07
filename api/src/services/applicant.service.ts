@@ -309,7 +309,7 @@ export default class ApplicantService {
         applicantDTO.lastName = applicant.lastName;
         applicantDTO.middleName = applicant.middleName;
         applicantDTO.name = `${applicant.firstName} ${applicant.middleName} ${applicant.lastName}`;
-        applicantDTO.applicationNumber = applicant.staffingApplicationId;
+        applicantDTO.applicationNumber = applicant.staffingApplicationNumber;
         applicantDTO.applicationId = applicant.staffingApplicationId;
         const applicantWithId = await this.upsert(applicantDTO, hurdleId);
         logger.debug(`BulkUSASUpsert: Created ${applicantWithId.id} applicant`);

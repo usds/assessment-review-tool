@@ -141,6 +141,7 @@ export default class ExportService {
       dto.applicationId = appEval.id;
       dto.applicantId = applicant.id;
       dto.applicantName = applicant.name!;
+      dto.applicantStaffingId = applicant.ApplicantMetum.staffing_application_id!;
       dto.specialtyId = appEval.Application.specialty_id!;
       dto.flagType = applicant.flag_type!;
       if (appEval.Approver) {

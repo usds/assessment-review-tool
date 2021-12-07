@@ -94,6 +94,7 @@ export default class App {
     this.app.use(express.json());
     const sc = sessionConfig;
 
+    // TODO: invalidate duplicate user sessions on new login
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const pgSession = require('connect-pg-simple')(session);
     sc.setStore(
