@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy Stage branch
 
 # Controls when the workflow will run
 on:
@@ -74,6 +74,7 @@ jobs:
       - name: Build frontend styles
         if: steps.frontend-scss-cache.outputs.cache-hit != 'true'
         run: npm run build:styles
+        working-directory: frontend
 
       - name: Build frontend
         if: steps.frontend-src-cache.outputs.cache-hit != 'true'
