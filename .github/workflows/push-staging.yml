@@ -24,6 +24,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
+
       - uses: actions/cache@v2
         with:
           path: ~/api/.npm
@@ -32,14 +33,27 @@ jobs:
             ${{ runner.os }}-node-api-
 
       - uses: actions/cache@v2
+        id: api-cache
+        with:
+          path: ~/api/node_modules
+          key: ${{ runner.os }}-api-${{ hashFiles('**/package-lock.json') }}
+
+      - uses: actions/cache@v2
         with:
           path: ~/frontend/.npm
           key: ${{ runner.os }}-node-frontend-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-frontend-
 
+      - uses: actions/cache@v2
+        id: frontend-cache
+        with:
+          path: ~/api/node_modules
+          key: ${{ runner.os }}-frontend-${{ hashFiles('**/package-lock.json') }}
+
       # Build frontend
       - name: Install frontend dependencies
+        if: steps.frontend-cache.outputs.cache-hit != 'true'
         run: npm ci
         working-directory: frontend
 
@@ -49,6 +63,7 @@ jobs:
 
       # Build backend
       - name: Install dependencies
+        if: steps.api-cache.outputs.cache-hit != 'true'
         run: npm ci
         working-directory: api
 
