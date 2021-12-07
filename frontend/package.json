@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "npm run build:prod",
-    "build-css": "node-sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ --output-style compressed -o src/styles/ src/scss/App.scss",
+    "build-css": "node-sass -q --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ --output-style compressed -o src/styles/ src/scss/App.scss",
     "build:prod": "REACT_APP_ENV=production npm run build:assets",
     "build:stage": "REACT_APP_ENV=staging npm run build:assets",
     "build:finish": "rm -rf ../api/src/client && mkdir -p ../api/src/client/ && mv build/* ../api/src/client/",

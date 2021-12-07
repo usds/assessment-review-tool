@@ -27,16 +27,16 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/api/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-api-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-api-
 
       - uses: actions/cache@v2
         with:
           path: ~/frontend/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-frontend-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-node-frontend-
 
       # Build frontend
       - name: Install frontend dependencies
