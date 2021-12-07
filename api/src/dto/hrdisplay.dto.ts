@@ -23,6 +23,7 @@ export class ApplicationHrEvaluationDto {
   applicantId!: string;
   applicantEvaluationKey!: string;
   created_at!: string;
+  evaluator_email!: string;
   competencyEvaluations!: CompetencyHrEvaluationDto[];
 }
 export default class HrDisplayDto {

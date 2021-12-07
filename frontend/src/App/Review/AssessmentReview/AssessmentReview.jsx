@@ -21,6 +21,7 @@ const AssessmentReview = ({
   handleInvalidateAssessment,
   handleUpdateLocalFeedbackNote,
   competencyEvaluations,
+  evaluator,
 }) => {
   const editButton = handleEditAssessmentReview && (
     <div className="smeqa-rr-hiring-action-justification__edit">
@@ -125,12 +126,22 @@ const AssessmentReview = ({
       <div className="smeqa-rr-hiring-action-justification__body">
         <div className="smeqa-rr-hiring-action-justification__top-row">
           <div className="smeqa-rr-hiring-action-justification__top-row-item">
-            <h5 className="smeqa-rr-hiring-action-justification__top-row-title">
-              Applicant
-            </h5>
-            <p className="smeqa-rr-hiring-action-justification__top-row-value">
-              {applicantName}
-            </p>
+            <div>
+              <h5 className="smeqa-rr-hiring-action-justification__top-row-title">
+                Applicant
+              </h5>
+              <p className="smeqa-rr-hiring-action-justification__top-row-value">
+                {applicantName}
+              </p>
+            </div>
+            <div style={{ marginTop: "1em" }}>
+              <h5 className="smeqa-rr-hiring-action-justification__top-row-title">
+                Evaluator
+              </h5>
+              <p className="smeqa-rr-hiring-action-justification__top-row-value">
+                {evaluator}
+              </p>
+            </div>
           </div>
           <div className="smeqa-rr-hiring-action-justification__top-row-item">
             <h5 className="smeqa-rr-hiring-action-justification__top-row-title">

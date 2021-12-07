@@ -37,6 +37,7 @@ const AssessmentReviewContainer = ({ applicantEvaluationId }) => {
     competency_name: competencyName,
     feedback,
     competencyEvaluations,
+    evaluator_email: evaluator,
   } = assessment;
   // const AssessmentStatusIndicator =
   // assessmentStatus & EDITING
@@ -125,6 +126,7 @@ const AssessmentReviewContainer = ({ applicantEvaluationId }) => {
   return (
     <Loading isLoading={status === "pending"}>
       <AssessmentReview
+        evaluator={evaluator}
         isAssessmentValid={isAssessmentValid}
         assessmentRequiresReview={assessmentRequiresReview}
         applicantName={applicantName}
