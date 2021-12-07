@@ -99,7 +99,7 @@ jobs:
         run: npm run build
         working-directory: api
 
-      - name: Deploy to cloud.gov
+      - name: Deploy to cloud.gov with 18f
         uses: 18f/cg-deploy-action@main
         with:
           cf_api: https://api.fr.cloud.gov
