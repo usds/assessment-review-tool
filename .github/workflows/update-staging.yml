@@ -18,6 +18,7 @@ on:
 jobs:
   push_secrets:
     runs-on: ubuntu-latest
+    steps:
       - name: Update Login.gov creds on cloud.gov
         uses: cloud-gov/cg-cli-tools@main
         with:
