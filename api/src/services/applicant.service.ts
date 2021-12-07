@@ -427,6 +427,19 @@ export default class ApplicantService {
     // //     })
     // //     .filter(e => e) as string[];
     // }
+    const competencyArray = Object.values(competencies);
+    if (!competencyArray.length) {
+      const removedAssignments = await ApplicationAssignments.destroy({
+        where: { applicant_id: applicantId, active: true, evaluator_id: currentUserId },
+      });
+      if (removedAssignments > 0) {
+        logger.debug(`Removed all assignments for ${applicantId}`);
+      }
+      throw new HttpException(
+        400,
+        `This applicant was completed by other SMEs - please go to the next applicant or refresh the page for a new assignment.`,
+      );
+    }
 
     const specialtyCompetencyMap = Object.entries(specialtyMap).reduce((memo, [sid, cSet]) => {
       memo[sid] = Array.from(cSet);
@@ -439,7 +452,7 @@ export default class ApplicantService {
     dto.specialties = specialties;
     dto.feedback = feedback?.evaluation_feedback || '';
     dto.feedbackTimestamp = feedback?.updated_at || new Date();
-    dto.competencies = Object.values(competencies);
+    dto.competencies = competencyArray;
     dto.specialtyCompetencyMap = specialtyCompetencyMap;
     dto.competencyEvaluations = evaluatedCompetencies;
     dto.isTieBreaker = isTieBreaker;
