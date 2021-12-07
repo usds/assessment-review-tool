@@ -34,8 +34,8 @@
     "start-js": "INLINE_RUNTIME_CHUNK=false react-scripts start",
     "start-js:dev": "INLINE_RUNTIME_CHUNK=false REACT_APP_ENV=staging react-scripts start",
     "test": "react-scripts test",
-    "watch-css": "npm run build-css && node-sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ -o src/styles/ --watch --recursive src/scss/App.scss",
-    "build:development": "npm run build-css && bash ./scripts/build.sh --env production",
+    "watch-css": "npm run build:styles && node-sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ -o src/styles/ --watch --recursive src/scss/App.scss",
+    "build:development": "npm run build:styles && bash ./scripts/build.sh --env production",
     "lint:check": "npm eslint && npm prettier --check .",
     "lint:fix": "npm prettier --write ."
   },
