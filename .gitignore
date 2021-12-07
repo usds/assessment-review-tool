@@ -30,3 +30,5 @@ lockbox/staging
 api/coverage
 api/tmp
 api/logs
+
+frontend/src/styles/app.css
