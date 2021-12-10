@@ -24,7 +24,7 @@ const PassFailJustificationContainer = ({ id }) => {
     justifications,
   } = competencyDetails;
   const { competency_selector_id, evaluation_note } = evaluation;
-  const [placeholder, setPlaceholder] = useState("");
+  const [_, setPlaceholder] = useState("");
 
   let competencyIsFailing = false;
 
