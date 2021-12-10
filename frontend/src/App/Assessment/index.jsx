@@ -14,7 +14,7 @@ import Assessments from "./Assessment";
 import AssessmentsAlert from "./AssessmentsAlert";
 import Loading from "../commonComponents/Loading";
 import ResumeReviewWithJustifications from "./ResumeReviewWithJustifications";
-
+import DSCWrittenAssessment from "./DSCWrittenAssessment";
 // const RR = <div>ResumeReview</div>;
 // const WrittenAssessments = <div>Written</div>;
 /**
@@ -48,7 +48,7 @@ const AssessmentsContainer = (props) => {
     <Assessments>
       <Loading isLoading={isLoading}>
         {isLoading ? null : applicantId ? (
-          <ResumeReviewWithJustifications />
+          <DSCWrittenAssessment />
         ) : (
           <AssessmentsAlert title={title} type={type} body={body} />
         )}
