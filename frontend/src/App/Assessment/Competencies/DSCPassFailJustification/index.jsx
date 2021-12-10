@@ -24,7 +24,7 @@ const PassFailJustificationContainer = ({ id }) => {
     justifications,
   } = competencyDetails;
   const { competency_selector_id, evaluation_note } = evaluation;
-  const [_, setPlaceholder] = useState("");
+  const [placeholder, setPlaceholder] = useState("");
 
   let competencyIsFailing = false;
 
@@ -86,7 +86,7 @@ const PassFailJustificationContainer = ({ id }) => {
           name={`${id}-justification`}
           onChange={updateCompetencyEvaluationNoteHandler}
           maxLength={1000}
-          placeholder={"Justification required"}
+          placeholder={placeholder || "Justification required"}
         />
       </fieldset>
     </PassFailJustification>
