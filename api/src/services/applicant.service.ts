@@ -26,12 +26,12 @@ import { ApplicationEvaluationCompetency } from '../models/application_evaluatio
 import { DBInterface } from '../database';
 import { CompetencyEvaluationCount } from '../models/competency_evaluation_count';
 import { ApplicantApplicationEvaluationNotes } from '../models/applicant_application_evaluation_notes';
-import marked from 'marked';
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-});
-const converter = marked;
+// import marked from 'marked';
+// marked.setOptions({
+//   renderer: new marked.Renderer(),
+//   gfm: true,
+// });
+// const converter = marked;
 
 export default class ApplicantService {
   applicationService = new ApplicationService();

@@ -16,13 +16,12 @@ import { Specialty } from '../models/specialty';
 import { SpecialtyCompetencies } from '../models/specialty_competencies';
 import { isEmpty } from '../utils/isEmpty';
 import { logger } from '../utils/logger';
-import marked from 'marked';
+import { marked } from 'marked';
 
 marked.setOptions({
   renderer: new marked.Renderer(),
   gfm: true,
 });
-const converter = marked;
 
 export default class CompetencyService {
   async getById(id: string): Promise<Competency> {
@@ -56,9 +55,9 @@ export default class CompetencyService {
   async upsert(body: CreateCompetencyDto, assessmentHurdleId: string): Promise<Competency> {
     const [instance] = await Competency.upsert({
       id: body.existingId,
-      definition: (body.definition && converter.parse(body.definition)) || '',
+      definition: (body.definition && marked.parse(body.definition)) || '',
       name: body.name,
-      required_proficiency_definition: (body.requiredProficiencyDefinition && converter.parse(body.requiredProficiencyDefinition)) || '',
+      required_proficiency_definition: (body.requiredProficiencyDefinition && marked.parse(body.requiredProficiencyDefinition)) || '',
       display_type: body.displayType,
       screen_out: body.screenOut,
       local_id: body.localId,
