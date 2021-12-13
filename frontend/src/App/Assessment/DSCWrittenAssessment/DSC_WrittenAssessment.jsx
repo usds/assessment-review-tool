@@ -70,7 +70,7 @@ const WrittenAssessment = ({
         <div className="grid-container">
           <div className="grid-row grid-gap-2">
             <div className="grid-col tablet:grid-col-8">
-              <h4 className="smeqa-rr__title">Resume review for</h4>
+              <h4 className="smeqa-rr__title">Project-based assessment for</h4>
               <h1 className="smeqa-rr__applicant-name">{applicantName}</h1>
             </div>
             <div className="grid-col tablet:grid-col-4">
@@ -116,59 +116,19 @@ const WrittenAssessment = ({
                 title="Instructions"
                 addClass="usa-accordion--bordered smeqa-rr-instructions"
               >
-                <p>Completing a resume review involves the following steps:</p>
-                <ol>
-                  <li>
-                    Find the applicant's resume in the email sent by the U.S.
-                    Digital Corps team. There may be applicants with similar
-                    names — please ensure you have the right resume.
-                  </li>
-                  <li>
-                    Align the browser window alongside the resume so that you
-                    can see both at the same time.
-                  </li>
-                  <li>
-                    Review only the first page of the resume detailing education
-                    to assess if they meet the minimum qualifications with
-                    education.
-                  </li>
-                  <li>
-                    Select "Yes" if the applicant passes with education. Under
-                    "Evaluation Justification," indicate the degree, field(s) of
-                    study, and graduation date, or education counted towards a
-                    degree. If an applicant passes with education, select
-                    "Passed with education" for the second question.
-                  </li>
-                  <li>
-                    If an applicant does not pass with education, select "No"
-                    and move to the second question. Review only the first two
-                    pages of the applicant's resume detailing experience to
-                    assess if they meet the minimum qualifications with
-                    experience. Look for evidence of each competency in their
-                    resume — use the experience they describe in their resume
-                    rather than searching for keywords.
-                  </li>
-                  <li>
-                    Select "Yes" if the applicant passes with experience. Under
-                    "Evaluation Justification," indicate where in the resume you
-                    found support for your rating (i.e., position titles for
-                    each competency and the experiences that add to 52 weeks).
-                  </li>
-                  <li>
-                    Select "No" if the applicant's resume does not pass with
-                    experience. Under "Evaluation Justification," you will see
-                    text auto-populate (i.e., "Does not move forward:"). Include
-                    the competencies that don't have enough evidence and provide
-                    any additional information to help others to retrace your
-                    decision.
-                  </li>
-                  <li>Click "Finish Review" to move to the next applicant.</li>
-                  <li>
-                    Keep working through the applicants. Click "Exit Review" at
-                    the top of the page to stop at any time. Incomplete reviews
-                    will not be saved on exit.
-                  </li>
-                </ol>
+                <p>
+                  For each competency provide a rating and a short evidence
+                  based justification for why a candidate passes/meets/exceeds
+                  the required competency level.
+                </p>
+                <p>
+                  See the 'prompts/project-based assessments examples' drop down
+                  for examples of ways to meet/exceed competency requirements.
+                </p>
+                <p>
+                  Only candidates who meet or exceed all of the competencies
+                  will move forward.
+                </p>
               </Accordion>
             </div>
           </div>
@@ -181,7 +141,7 @@ const WrittenAssessment = ({
             </div>
             <div className="tablet:grid-col-4">
               <h4 className="smeqa-rr-comps__title--prof">
-                Project based assessments reflects this competency
+                Project-based assessments reflects this competency
               </h4>
             </div>
           </div>

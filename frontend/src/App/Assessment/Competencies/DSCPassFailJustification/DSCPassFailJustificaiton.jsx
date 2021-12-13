@@ -20,7 +20,7 @@ const PassFailJustification = ({
   const definitionAccordion =
     definition && definition.length ? (
       <Accordion
-        title="Prompts / Project based assessment examples"
+        title="Prompts / Project-based assessment examples"
         isDrawer={true}
       >
         <div dangerouslySetInnerHTML={{ __html: definition }}></div>
@@ -58,7 +58,7 @@ const PassFailJustification = ({
 
       <div className="tablet:grid-col-4">
         <h4 className="smeqa-rr-comp__title--prof">
-          Project based assessments reflects this competency?
+          Project-based assessments reflects this competency?
         </h4>
         <RadioGroup
           buttons={selectors}
