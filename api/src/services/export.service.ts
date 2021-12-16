@@ -242,36 +242,6 @@ export default class ExportService {
 
     const applicantIds = allApplicants.map(aa => aa.id);
     logger.info(`${applicantIds.length} applicants found`);
-    const { hurdle_display_type } = assessmentHurdle;
-    const { staffing_fail_nor, staffing_pass_nor } = assessmentHurdle.AssessmentHurdleMetum;
-    const getNORCode = (ar: ApplicantStatusMetrics): string => {
-      if (hurdle_display_type !== 1) return '';
-      switch (ar.review_status!) {
-        case 'pending amendment':
-          return 'PENDING_AMENDMENT';
-        case 'pending review':
-          return 'PENDING_REVIEW';
-        case 'pending evaluations':
-          return 'PENDING_EVALUATIONS';
-        default:
-          break;
-      }
-      switch (ar.evaluation_status!) {
-        case 'does_not_meet':
-          return staffing_fail_nor || 'DOES_NOT_PASS';
-        case 'meets':
-          return staffing_pass_nor || 'PASS';
-        case 'error':
-          return 'ERROR';
-        default:
-          return 'ERROR';
-      }
-    };
-
-    const getRatingScore = (ar: ApplicantStatusMetrics): number | null => {
-      if (assessmentHurdle.hurdle_display_type === 1) return null;
-      else throw new HttpException(500, 'rating type not implemented');
-    };
 
     const aggResults = await ApplicantStatusMetrics.findAll({
       where: {
@@ -317,8 +287,8 @@ export default class ExportService {
         applicantLastName: ar.Applicant.ApplicantMetum.staffing_last_name!,
         applicantMiddleName: ar.Applicant.ApplicantMetum.staffing_middle_name!,
         ratingCombination: ar.Applicant.Applications[0].ApplicationMetum.staffing_rating_combination!,
-        minQualificationsRating: getNORCode(ar),
-        assessmentRating: getRatingScore(ar),
+        minQualificationsRating: ar.review_status != 'complete' ? ar.review_status : ar.evaluation_status,
+        assessmentRating: null,
       });
     });
 

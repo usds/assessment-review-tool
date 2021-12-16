@@ -70,8 +70,6 @@ export default class AssessmentHurdleService {
         staffing_assessment_id: body.assessmentId,
         staffing_vacancy_id: body.vacancyId,
         assessment_hurdle_id: instance.id,
-        staffing_fail_nor: body.failNor,
-        staffing_pass_nor: body.passNor,
       },
     });
 
@@ -79,8 +77,6 @@ export default class AssessmentHurdleService {
       await meta.update({
         staffing_assessment_id: body.assessmentId,
         staffing_vacancy_id: body.vacancyId,
-        staffing_fail_nor: body.failNor,
-        staffing_pass_nor: body.passNor,
       });
     }
 

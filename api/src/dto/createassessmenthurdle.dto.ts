@@ -43,10 +43,4 @@ export default class CreateAssessmentHurdleDto {
   @IsString()
   @IsNotEmpty()
   public assessmentName = '';
-  @IsString()
-  @IsOptional()
-  public passNor: string | undefined = undefined;
-  @IsString()
-  @IsOptional()
-  public failNor: string | undefined = undefined;
 }

@@ -51,7 +51,12 @@ export default class SpecialtyService {
       local_id: body.localId,
       name: body.name,
       assessment_hurdle_id: body.assessmentHurdleId,
-      points_required: body.pointsRequired,
+      does_not_meet_points: body.categoryRatings?.does_not_meet?.points,
+      does_not_meet_nor: body.categoryRatings?.does_not_meet?.nor,
+      meets_points: body.categoryRatings?.meets?.points,
+      meets_nor: body.categoryRatings?.meets?.nor,
+      exceeds_points: body.categoryRatings?.exceeds?.points,
+      exceeds_nor: body.categoryRatings?.exceeds?.nor,
     });
 
     logger.debug(`Upserted Specialty ${instance.id}`);

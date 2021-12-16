@@ -1,0 +1,117 @@
+{
+  "competencies": [
+    {
+      "name": "Analytical Ability",
+      "localId": "core_analytical_ability",
+      "definition": "Ability to approach problems quantitatively by defining and tracking key metrics to make data-driven decisions.",
+      "requiredProficiencyDefinition": "Breaks problems down into component parts. Displays repeated experience in qualitative and quantitative analysis. Defines product or project metrics beyond the basics and ties these metrics to decisions. \n\n Anticipates the need for metrics and analysis early in the product and project discovery and design process, and carries metrics through iterations.",
+      "displayType": 1,
+      "sortOrder": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "No",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Resume reflects insufficient evidence of Analytical Ability"
+        },
+        {
+          "displayName": "Meets",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 2,
+          "pointValue": 1
+        },
+        {
+          "displayName": "Exceeds",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 3,
+          "pointValue": 2
+        }
+      ]
+    },
+    {
+      "name": "Technical Communication",
+      "localId": "core_technical_communication",
+      "definition": "Explains technical concepts to both technical and non-technical audiences. Able to frame technical choices and tradeoffs to decision makers and justify organizational IT needs against business priorities.",
+      "requiredProficiencyDefinition": "Explains technical concepts effectively. Helps audiences of all types better understand issues and the impact of technical decisions on their business requirements. Can identify distinct stakeholder groups, understands different viewpoints, and communicates accordingly.",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "No",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Resume reflects insufficient evidence of Technical Communication."
+        },
+        {
+          "displayName": "Meets",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 2,
+          "pointValue": 1
+        },
+        {
+          "displayName": "Exceeds",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 3,
+          "pointValue": 2
+        }
+      ]
+    },
+    {
+      "name": "Product Delivery",
+      "localId": "core_product_delivery",
+      "definition": "Regardless of environmental challenges, ships products and drives teams to deliver on key milestones. Gets Minimum Viable Products out the door without waiting for the perfect technical implementation or inclusion of every feature.",
+      "requiredProficiencyDefinition": "Has been part of teams that have shipped software products. Has experience scoping and making tradeoffs to hit deadlines, and also working closely with engineers and designers in an iterative environment.",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "No",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Resume reflects insufficient evidence of Product Delivery."
+        },
+        {
+          "displayName": "Meets",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 2,
+          "pointValue": 1
+        },
+        {
+          "displayName": "Exceeds",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 3,
+          "pointValue": 2
+        }
+      ]
+    },
+    {
+      "name": "Incident and Change Management",
+      "localId": "core_incident_mgmt",
+      "definition": "Effectively manages incidents and risk by understanding roles, risk mitigation, and coordinating investigation teams of technical and non-technical stakeholders.",
+      "requiredProficiencyDefinition": "Knows when to escalate issues to leadership and can effectively communicate with non-technical people. Can work within a focused team to resolve a problem. Is able to articulate risk in terms of changes made to an application and release timing.",
+      "displayType": 1,
+      "screenOut": true,
+      "selectors": [
+        {
+          "displayName": "No",
+          "pointValue": 0,
+          "sortOrder": 1,
+          "defaultText": "Resume reflects insufficient evidence of Incident and Change Management."
+        },
+        {
+          "displayName": "Meets",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 2,
+          "pointValue": 1
+        },
+        {
+          "displayName": "Exceeds",
+          "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
+          "sortOrder": 3,
+          "pointValue": 2
+        }
+      ]
+    }
+  ]
+}

@@ -29,7 +29,7 @@ const PassFailJustificationContainer = ({ id }) => {
   let competencyIsFailing = false;
 
   const selectors = [...allSelectors]
-    .sort((sa, sb) => sb.sort_order - sa.sort_order)
+    .sort((sa, sb) => sa.sort_order - sb.sort_order)
     .map((s) => {
       return {
         label: s.display_name,
