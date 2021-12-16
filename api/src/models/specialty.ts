@@ -8,7 +8,12 @@ export interface SpecialtyAttributes {
   name: string;
   local_id: string;
   assessment_hurdle_id?: string;
-  points_required?: number;
+  does_not_meet_points?: number;
+  meets_points?: number;
+  exceeds_points?: number;
+  does_not_meet_nor?: string;
+  meets_nor?: string;
+  exceeds_nor?: string;
   created_at?: Date;
   updated_at?: Date;
 }
@@ -22,7 +27,12 @@ export class Specialty extends Model<SpecialtyAttributes, SpecialtyCreationAttri
   name!: string;
   local_id!: string;
   assessment_hurdle_id?: string;
-  points_required?: number;
+  does_not_meet_points?: number;
+  meets_points?: number;
+  exceeds_points?: number;
+  does_not_meet_nor?: string;
+  meets_nor?: string;
+  exceeds_nor?: string;
   created_at?: Date;
   updated_at?: Date;
 
@@ -84,11 +94,12 @@ export class Specialty extends Model<SpecialtyAttributes, SpecialtyCreationAttri
           },
           unique: 'unique_specialty_mapping',
         },
-        points_required: {
-          type: DataTypes.INTEGER,
-          allowNull: true,
-          defaultValue: 1,
-        },
+        does_not_meet_points: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 0 },
+        meets_points: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 1 },
+        exceeds_points: { type: DataTypes.INTEGER, allowNull: true, defaultValue: 1 },
+        does_not_meet_nor: { type: DataTypes.STRING, allowNull: true, defaultValue: 'FAILS' },
+        meets_nor: { type: DataTypes.STRING, allowNull: true, defaultValue: 'MEETS' },
+        exceeds_nor: { type: DataTypes.STRING, allowNull: true, defaultValue: 'EXCEEDS' },
         created_at: {
           type: DataTypes.DATE,
           allowNull: true,

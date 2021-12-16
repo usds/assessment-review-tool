@@ -5,8 +5,6 @@ export interface AssessmentHurdleMetaAttributes {
   id: string;
   staffing_vacancy_id: string;
   staffing_assessment_id: string;
-  staffing_pass_nor?: string;
-  staffing_fail_nor?: string;
   assessment_hurdle_id?: string;
   created_at?: Date;
   updated_at?: Date;
@@ -18,12 +16,11 @@ export type AssessmentHurdleMetaCreationAttributes = Optional<AssessmentHurdleMe
 
 export class AssessmentHurdleMeta
   extends Model<AssessmentHurdleMetaAttributes, AssessmentHurdleMetaCreationAttributes>
-  implements AssessmentHurdleMetaAttributes {
+  implements AssessmentHurdleMetaAttributes
+{
   id!: string;
   staffing_vacancy_id!: string;
   staffing_assessment_id!: string;
-  staffing_pass_nor?: string;
-  staffing_fail_nor?: string;
   assessment_hurdle_id?: string;
   created_at?: Date;
   updated_at?: Date;
@@ -52,14 +49,6 @@ export class AssessmentHurdleMeta
           type: DataTypes.STRING,
           allowNull: false,
           unique: 'unique_hurdle',
-        },
-        staffing_pass_nor: {
-          type: DataTypes.STRING,
-          allowNull: true,
-        },
-        staffing_fail_nor: {
-          type: DataTypes.STRING,
-          allowNull: true,
         },
         assessment_hurdle_id: {
           type: DataTypes.UUID,

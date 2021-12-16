@@ -10,13 +10,13 @@
       "screenOut": true,
       "selectors": [
         {
-          "displayName": "Yes",
+          "displayName": "Meets - Education",
           "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
           "sortOrder": 2,
           "pointValue": 1
         },
         {
-          "displayName": "Yes 2",
+          "displayName": "Meets - Experience",
           "defaultText": "Please indicate where in the resume (at least the year) you found support for your rating.",
           "sortOrder": 2,
           "pointValue": 1
