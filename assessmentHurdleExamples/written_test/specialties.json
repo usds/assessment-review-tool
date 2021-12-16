@@ -1,0 +1,19 @@
+{
+  "specialties": [
+    {
+      "name": "swe",
+      "categoryRatings": {
+        "does_not_move": { "points": 0, "NOR": "FAIL" },
+        "meets": { "points": 4, "NOR": "MEETS" },
+        "exceeds": { "points": 6, "NOR": "EXCEEDS" }
+      },
+      "localId": "swelocalid",
+      "competencyLocalIds": [
+        "core_analytical_ability",
+        "core_technical_communication",
+        "core_product_delivery",
+        "core_incident_mgmt"
+      ]
+    }
+  ]
+}

@@ -2,7 +2,10 @@
   "specialties": [
     {
       "name": "Core specialty GS 13",
-      "pointsRequired": 6,
+      "categoryRatings": {
+        "does_not_meet": { "points": 0, "nor": "FAIL" },
+        "meets": { "points": 6, "nor": "MEETS" }
+      },
       "localId": "0000-00(Ruler-of-the-gods)",
       "competencyLocalIds": [
         "core_analytical_ability",

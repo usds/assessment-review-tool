@@ -2,15 +2,17 @@
   "departmentName": "Office of Weaving",
   "componentName": "Moirai Component",
   "positionName": "Ruler of the Gods - small",
-  "assessmentName": "Resume Review",
+  "assessmentName": "Written Assessment",
   "positionDetails": "(G1)",
   "locations": "Olympus, Greece",
   "startDatetime": "2020-12-16T21:00:00.000Z",
   "endDatetime": "2020-01-22T21:00:00.000Z",
   "hurdleDisplayType": 1,
-  "evaluationsRequired": 2,
-  "hrEmail": "zeus@olympus.com",
-  "hrName": "Zeus",
-  "vacancyId": "9999999999",
-  "assessmentId": "1234"
+  "evaluationsRequired": 1,
+  "hrEmail": "kelvin.t.luu@omb.eop.gov",
+  "hrName": "Kelvin Luu",
+  "vacancyId": "swe_vacancy_1",
+  "assessmentId": "swq_assessment_1",
+  "passNor": "1",
+  "failNor": "0"
 }
