@@ -30,6 +30,7 @@ const MetricsContainer = (props) => {
     position_name: positionName,
     position_details: level,
   } = hiringActionInfo;
+  const reviewURL = `/hiring-action/hr/${hiringActionId}/review`;
 
   const isLoading = metricsStatus === "pending" || metricsStatus === "idle";
   useEffect(() => {
@@ -78,6 +79,7 @@ const MetricsContainer = (props) => {
     <Loading isLoading={isLoading}>
       {!isLoading && (
         <Metrics
+          reviewURL={reviewURL}
           departmentName={departmentName}
           positionName={positionName}
           level={level}

@@ -13,6 +13,7 @@ const Metrics = ({
   level,
   estimates,
   reviewerStats,
+  reviewURL,
 }) => {
   return (
     <div className="grid-container">
@@ -27,7 +28,10 @@ const Metrics = ({
               <p className="smeqa-rr-hiring-action__gs-level">{level}</p>
             </div>
             <div className="smeqa-rr-hiring-action__col right">
-              <Link to={"/"}>
+              <Link
+                to={"/"}
+                className="smeqa-rr-home-hiring-action__button-container"
+              >
                 <Button
                   onClick={() => {}}
                   type="submit"
@@ -35,17 +39,17 @@ const Metrics = ({
                   addClass="smeqa-rr-home-hiring-action__button"
                 />
               </Link>
-              {/* <Link
-                to={hrStatsLink}
+              <Link
+                to={reviewURL}
                 className="smeqa-rr-home-hiring-action__button-container"
               >
                 <Button
                   onClick={() => {}}
                   type="submit"
-                  label="View Metrics"
+                  label="Return To Review"
                   addClass="smeqa-rr-home-hiring-action__button"
                 />
-              </Link> */}
+              </Link>
               {/* <Button
                   onClick={() => this.props.handleExportResults()}
                   outline
