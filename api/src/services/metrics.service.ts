@@ -8,10 +8,9 @@ import { AssessmentHurdle } from '../models/assessment_hurdle';
 import { AssessmentHurdleUser } from '../models/assessment_hurdle_user';
 import { ApplicantRecusals, ApplicationAssignments, ApplicationEvaluationAgg, AppUser, ReviewerMetrics } from '../models/init-models';
 import { EvaluatorMetrics } from '../models/evaluator_metrics';
-import sequelize from 'sequelize';
 
 type ApplicantNameKey = { [applicantId: string]: string };
-type AppUserNameKey = { [appUserId: string]: { name: string; email: string } };
+type AppUserNameKey = { [appUserId: string]: { name: string; email: string; role: number } };
 export default class MetricsService {
   private async _getApplicantNames(hurdleId: string): Promise<ApplicantNameKey> {
     const applicants = await Applicant.findAll({
@@ -30,7 +29,7 @@ export default class MetricsService {
       where: {
         assessment_hurdle_id: hurdleId,
       },
-      attributes: [],
+      attributes: ['role'],
       include: [
         {
           model: AppUser as any,
@@ -40,9 +39,11 @@ export default class MetricsService {
       ],
     });
     return assessmentHurdleEvaluators
-      .flatMap(e => e.AppUser)
+      .flatMap(e => {
+        return { id: e.AppUser.id, name: e.AppUser.name, email: e.AppUser.email, role: e.role };
+      })
       .reduce((memo, appuser) => {
-        memo[appuser.id] = { name: appuser.name!, email: appuser.email! };
+        memo[appuser.id] = { name: appuser.name!, email: appuser.email!, role: appuser.role };
         return memo;
       }, {} as AppUserNameKey);
   }
@@ -55,13 +56,38 @@ export default class MetricsService {
         assessment_hurdle_id: hurdleId,
       },
     });
-    const evaluators = await EvaluatorMetrics.findAll({
-      where: {
-        assessment_hurdle_id: hurdleId,
-        evaluator: { [Op.ne]: null },
-      },
-    });
 
+    const evaluatorMetrics = (
+      await EvaluatorMetrics.findAll({
+        where: {
+          assessment_hurdle_id: hurdleId,
+          evaluator: { [Op.ne]: null },
+        },
+      })
+    ).reduce((memo, em) => {
+      memo[em.evaluator!] = em;
+      return memo;
+    }, {} as { [evaluator: string]: EvaluatorMetrics });
+
+    const evaluators = Object.entries(appUserNames)
+      .map(([userId, userDetails]) => {
+        if (userDetails.role != 2) {
+          return null;
+        }
+        if (evaluatorMetrics[userId]) {
+          return evaluatorMetrics[userId];
+        }
+        return {
+          id: userId,
+          name: userDetails.name,
+          assessment_hurdle_id: hurdleId,
+          pending_review: 0,
+          pending_amendment: 0,
+          completed: 0,
+          recusals: 'No data',
+        } as unknown as EvaluatorMetrics;
+      })
+      .filter(e => e);
     const reviewers = await ReviewerMetrics.findAll({
       where: {
         assessment_hurdle_id: hurdleId,

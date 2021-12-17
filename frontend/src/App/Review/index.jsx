@@ -9,6 +9,7 @@ import {
   selectApprovedReviews,
   selectDeniedReviews,
   selectFlaggedReviews,
+  selectCurrentHiringActionId,
 } from "./reviewSlice";
 import { selectHiringActionDetails } from "../HiringActions/hiringActionSlice";
 import { withRouter } from "react-router-dom";
@@ -64,6 +65,7 @@ const ReviewContainer = (props) => {
   const dispatch = useDispatch();
   const { hiringActionId } = props.match.params;
   const reviewStatus = useSelector(selectReviewStatus);
+  const currentLoadedHiringAction = useSelector(selectCurrentHiringActionId);
   const hrStatsLink = `/hiring-action/metrics/${hiringActionId}`;
   const downloadUSASLink = `/api/assessment-hurdle/export/${hiringActionId}/resultsusas`;
 
@@ -84,7 +86,10 @@ const ReviewContainer = (props) => {
   } = hiringActionInfo;
   // const competenciesForReview = useSelector(selectCompetenciesForReview);
   useEffect(() => {
-    if (reviewStatus === "idle") {
+    if (
+      reviewStatus === "idle" ||
+      hiringActionId !== currentLoadedHiringAction
+    ) {
       dispatch(loadHiringActionDetails(hiringActionId));
     }
   });
