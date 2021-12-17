@@ -12,7 +12,7 @@ export const fetchMetrics = createAsyncThunk(
   "metrics/fetchMetrics",
   async (assessmentHurdleId) => {
     const userMetrics = await fetchAssessmentHurdleMetrics(assessmentHurdleId);
-    return { userMetrics };
+    return { userMetrics, assessmentHurdleId };
   }
 );
 
@@ -22,6 +22,7 @@ export const metricsSlice = createSlice({
     error: "",
     status: "idle",
     metrics: {},
+    assessmentHurdleId: null,
   },
   extraReducers: {
     [fetchMetrics.pending]: (state, action) => {
@@ -29,10 +30,11 @@ export const metricsSlice = createSlice({
       state.error = "";
     },
     [fetchMetrics.fulfilled]: (state, { payload }) => {
-      const { userMetrics } = payload;
+      const { userMetrics, assessmentHurdleId } = payload;
       state.status = "fulfilled";
       state.error = "";
       state.metrics = userMetrics;
+      state.assessmentHurdleId = assessmentHurdleId;
     },
     [fetchMetrics.rejected]: (state, action) => {
       state.status = "rejectd";
@@ -43,4 +45,6 @@ export const metricsSlice = createSlice({
 
 export const selectMetrics = (state) => state.metrics.metrics;
 export const selectMetricsStatus = (state) => state.metrics.status;
+export const selectCurrentHiringActionId = (state) =>
+  state.metrics.assessmentHurdleId;
 export default metricsSlice.reducer;

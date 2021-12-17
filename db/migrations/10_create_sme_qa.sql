@@ -1,7 +1,9 @@
 CREATE TABLE IF NOT EXISTS SMEQA_DB_VERSION(
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid()
+    id SERIAL PRIMARY KEY
     , migration_number INT 
+    , migration_ts TIMESTAMP DEFAULT NOW()
 );
+
 CREATE TABLE IF NOT EXISTS app_user (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid()
     , email VARCHAR NOT NULL UNIQUE

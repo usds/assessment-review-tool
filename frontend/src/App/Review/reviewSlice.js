@@ -375,3 +375,5 @@ export const selectFlaggedReview = (id) => (state) => {
 export const selectAssessmentReview = (id) => (state) => {
   return state.review.applicantEvaluations[id];
 };
+export const selectCurrentHiringActionId = (state) =>
+  state.review.hiringActionId;
