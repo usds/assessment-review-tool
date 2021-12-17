@@ -5,6 +5,7 @@ import {
   fetchMetrics,
   selectMetrics,
   selectMetricsStatus,
+  selectCurrentHiringActionId,
 } from "./metricsSlice";
 import Loading from "../commonComponents/Loading";
 import Metrics from "./Metrics";
@@ -13,6 +14,7 @@ import { selectHiringActionDetails } from "../HiringActions/hiringActionSlice";
 const MetricsContainer = (props) => {
   const dispatch = useDispatch();
   const { hiringActionId } = props.match.params;
+  const currentHiringAction = useSelector(selectCurrentHiringActionId);
 
   const metricsStatus = useSelector(selectMetricsStatus);
 
@@ -31,7 +33,7 @@ const MetricsContainer = (props) => {
 
   const isLoading = metricsStatus === "pending" || metricsStatus === "idle";
   useEffect(() => {
-    if (metricsStatus === "idle") {
+    if (metricsStatus === "idle" || hiringActionId !== currentHiringAction) {
       dispatch(fetchMetrics(hiringActionId));
     }
   });
