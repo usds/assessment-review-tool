@@ -53,7 +53,25 @@ const Footer = ({ includeReturnToTop = true }) => {
             <div className="usa-footer__nav">
               <ul className="grid-row grid-gap-lg">
                 <li className="mobile-lg:grid-col-auto usa-footer__primary-content">
-                  <p className="usa-footer__primary-link">{buildVersion}</p>
+                  <a
+                    className="usa-footer__primary-link"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://github.com/usds/assessment-review-tool"
+                  >
+                    {buildVersion} - Source
+                  </a>
+                </li>
+
+                <li className="mobile-lg:grid-col-auto usa-footer__primary-content">
+                  <a
+                    className="usa-footer__primary-link"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://github.com/usds/assessment-review-tool/issues"
+                  >
+                    Feature Requests and Issues
+                  </a>
                 </li>
               </ul>
             </div>
