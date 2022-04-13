@@ -110,7 +110,7 @@ class LoginPage extends React.Component {
                   required for the specified position. HR can review written
                   justification statements. If you have any trouble using this
                   website, please contact{" "}
-                  <a href="mailto:kelvin.t.luu@omb.eop.gov">Kelvin Luu</a>.
+                  <a href="mailto:william.l.slack@omb.eop.gov">Will Slack</a>.
                 </p>
                 <div className="grid-col-3 smeqa-login-button">
                   {LoginButton}
