@@ -86,6 +86,6 @@
     "winston-daily-rotate-file": "^4.5.0"
   },
   "engines": {
-    "node": "14.19.1"
+    "node": "14.19.0"
   }
 }
