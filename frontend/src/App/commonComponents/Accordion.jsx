@@ -8,18 +8,18 @@ export default class Accordion extends React.Component {
     super();
     uniqueId.enableUniqueIds(this);
     this.state = {
-      isExpanded: false
+      isExpanded: false,
     };
   }
 
   static propTypes = {
     title: PropTypes.string.isRequired,
-    isDrawer: PropTypes.bool
+    isDrawer: PropTypes.bool,
   };
 
   onExpand = () => {
     this.setState({
-      isExpanded: !this.state.isExpanded
+      isExpanded: !this.state.isExpanded,
     });
   };
 
@@ -53,7 +53,7 @@ export default class Accordion extends React.Component {
       let classNames = classnames(
         {
           "usa-accordion": true,
-          "usa-accordion--bordered": false
+          "usa-accordion--bordered": false,
         },
         this.props.addClass
       );

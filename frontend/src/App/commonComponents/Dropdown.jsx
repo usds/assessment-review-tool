@@ -12,17 +12,17 @@ class Dropdown extends React.Component {
     options: PropTypes.arrayOf(
       PropTypes.shape({
         text: PropTypes.string,
-        value: PropTypes.string
+        value: PropTypes.string,
       })
     ),
     label: PropTypes.string,
     name: PropTypes.name,
     selectedValue: PropTypes.value,
-    onChange: PropTypes.string
+    onChange: PropTypes.string,
   };
 
   render() {
-    const options = this.props.options.map(option => {
+    const options = this.props.options.map((option) => {
       let { value, text } = { ...option };
       return (
         <option value={value} selected={this.props.selectedValue === value}>

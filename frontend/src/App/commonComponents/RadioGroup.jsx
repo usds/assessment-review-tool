@@ -13,24 +13,28 @@ export default class RadioGroup extends React.Component {
       PropTypes.shape({
         value: PropTypes.string,
         label: PropTypes.string,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
       })
     ),
     name: PropTypes.string,
     value: PropTypes.string,
     disabled: PropTypes.bool,
     horizontal: PropTypes.bool,
-    label: PropTypes.string
+    label: PropTypes.string,
   };
 
   render() {
-    const radioGroupItems = this.props.buttons.map(button => (
+    const radioGroupItems = this.props.buttons.map((button) => (
       <li
         // NOTE:`horizontal` should:
         // only be used for radio buttons with two options. 3 or more should be vertically stacked
         // always fit on one line
         // list Affirmations before negations: IE. Yes before No.
-        className={this.props.horizontal ? "smeqa-radio__container smeqa-radio--horizontal__container" : "smeqa-radio__container"}
+        className={
+          this.props.horizontal
+            ? "smeqa-radio__container smeqa-radio--horizontal__container"
+            : "smeqa-radio__container"
+        }
         key={button.value}
       >
         <input
@@ -53,7 +57,13 @@ export default class RadioGroup extends React.Component {
     return (
       <fieldset className="usa-fieldset">
         <legend className="usa-sr-only">{this.props.legend}</legend>
-        <ul className={this.props.horizontal ? "smeqa-radio--horizontal" : "usa-list--unstyled"}>
+        <ul
+          className={
+            this.props.horizontal
+              ? "smeqa-radio--horizontal"
+              : "usa-list--unstyled"
+          }
+        >
           {radioGroupItems}
         </ul>
       </fieldset>
