@@ -19,7 +19,7 @@ const PassFailJustification = ({
 }) => {
   const definitionAccordion =
     definition && definition.length ? (
-      <Accordion title="Details" isDrawer={true}>
+      <Accordion title="Competency Definition" isDrawer={true}>
         <div dangerouslySetInnerHTML={{ __html: definition }}></div>
       </Accordion>
     ) : null;
