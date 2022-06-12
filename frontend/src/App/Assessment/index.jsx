@@ -14,7 +14,7 @@ import Assessments from "./Assessment";
 import AssessmentsAlert from "./AssessmentsAlert";
 import Loading from "../commonComponents/Loading";
 import ResumeReviewWithJustifications from "./ResumeReviewWithJustifications";
-import DSCWrittenAssessment from "./DSCWrittenAssessment";
+// import DSCWrittenAssessment from "./DSCWrittenAssessment";
 // const RR = <div>ResumeReview</div>;
 // const WrittenAssessments = <div>Written</div>;
 /**
