@@ -19,7 +19,7 @@ class ProgressBar extends React.Component {
       quantity: PropTypes.number, // ie: 14
       label: PropTypes.string, // ie: reviews pending
     }),
-    comment: PropTypes.string
+    comment: PropTypes.string,
   };
   render() {
     const positivePercentage = this.props.positive
@@ -54,7 +54,11 @@ class ProgressBar extends React.Component {
       float: "left",
       height: "100%",
     };
-    const additionalComment = this.props.comment ? (<div><span>{this.props.comment}</span></div>) : null;
+    const additionalComment = this.props.comment ? (
+      <div>
+        <span>{this.props.comment}</span>
+      </div>
+    ) : null;
     return (
       <div className="smeqa-rr-progress-bar">
         <div

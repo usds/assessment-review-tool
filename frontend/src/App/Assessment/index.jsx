@@ -13,8 +13,8 @@ import Assessments from "./Assessment";
 // import ResumeReview from "./ResumeReview";
 import AssessmentsAlert from "./AssessmentsAlert";
 import Loading from "../commonComponents/Loading";
-// import ResumeReviewWithJustifications from "./ResumeReviewWithJustifications";
-import DSCWrittenAssessment from "./DSCWrittenAssessment";
+import ResumeReviewWithJustifications from "./ResumeReviewWithJustifications";
+// import DSCWrittenAssessment from "./DSCWrittenAssessment";
 // const RR = <div>ResumeReview</div>;
 // const WrittenAssessments = <div>Written</div>;
 /**
@@ -48,7 +48,7 @@ const AssessmentsContainer = (props) => {
     <Assessments>
       <Loading isLoading={isLoading}>
         {isLoading ? null : applicantId ? (
-          <DSCWrittenAssessment />
+          <ResumeReviewWithJustifications />
         ) : (
           <AssessmentsAlert title={title} type={type} body={body} />
         )}

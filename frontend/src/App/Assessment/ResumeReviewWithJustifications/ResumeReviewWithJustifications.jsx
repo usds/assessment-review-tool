@@ -119,54 +119,38 @@ const ResumeReview = ({
                 <p>Completing a resume review involves the following steps:</p>
                 <ol>
                   <li>
-                    Find the applicant's resume in the email sent by the U.S.
-                    Digital Corps team. There may be applicants with similar
-                    names — please ensure you have the right resume.
+                    Find the applicant's resume in USA Staffing or through a
+                    batch download on USA Staffing.
                   </li>
                   <li>
                     Align the browser window alongside the resume so that you
                     can see both at the same time.
                   </li>
                   <li>
-                    Review only the first page of the resume detailing education
-                    to assess if they meet the minimum qualifications with
-                    education.
+                    Review the applicant's resume for the specialized experience
+                    below. Look for evidence of each pre-defined experience in
+                    their resume. Use the experience they describe in their
+                    resume rather than searching for keywords.
                   </li>
                   <li>
-                    Select "Yes" if the applicant passes with education. Under
-                    "Evaluation Justification," indicate the degree, field(s) of
-                    study, and graduation date, or education counted towards a
-                    degree. If an applicant passes with education, select
-                    "Passed with education" for the second question.
+                    Select “Yes” if the applicant's resume reflects the required
+                    experience. Under “Evaluation Justification” indicate where
+                    in the resume you found support for your rating (i.e.,
+                    year(s) experience gained, as well as position title as
+                    needed for clarity).
                   </li>
                   <li>
-                    If an applicant does not pass with education, select "No"
-                    and move to the second question. Review only the first two
-                    pages of the applicant's resume detailing experience to
-                    assess if they meet the minimum qualifications with
-                    experience. Look for evidence of each competency in their
-                    resume — use the experience they describe in their resume
-                    rather than searching for keywords.
-                  </li>
-                  <li>
-                    Select "Yes" if the applicant passes with experience. Under
-                    "Evaluation Justification," indicate where in the resume you
-                    found support for your rating (i.e., position titles for
-                    each competency and the experiences that add to 52 weeks).
-                  </li>
-                  <li>
-                    Select "No" if the applicant's resume does not pass with
-                    experience. Under "Evaluation Justification," you will see
-                    text auto-populate (i.e., "Does not move forward:"). Include
-                    the competencies that don't have enough evidence and provide
-                    any additional information to help others to retrace your
+                    Select “No” if the applicant's resume does not reflect the
+                    required experience. Under “Evaluation Justification,” you
+                    will see text auto-populate (i.e., “Resume reflects
+                    insufficient evidence of …”). Provide additional
+                    justification as needed to help others to retrace your
                     decision.
                   </li>
                   <li>Click "Finish Review" to move to the next applicant.</li>
                   <li>
                     Keep working through the applicants. Click "Exit Review" at
-                    the top of the page to stop at any time. Incomplete reviews
-                    will not be saved on exit.
+                    the top of the page to stop at any time.
                   </li>
                 </ol>
               </Accordion>

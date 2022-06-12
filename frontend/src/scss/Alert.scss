@@ -1,10 +1,10 @@
 // Alert styles
 
 .smeqa-alert {
-  // USWDS are missing these two directives which prevent 
+  // USWDS are missing these two directives which prevent
   // the table cell from being full width
   display: table;
-  width: 100%; 
+  width: 100%;
   margin-bottom: units(4);
 
   &__footer {
@@ -13,6 +13,6 @@
   }
 }
 
-.smeqa-alert[aria-hidden=true] {
+.smeqa-alert[aria-hidden="true"] {
   display: none;
 }

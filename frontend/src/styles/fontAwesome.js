@@ -15,7 +15,7 @@ import {
   faSync,
   faTimes,
   faTrash,
-  faUser
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(

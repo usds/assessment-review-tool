@@ -12,7 +12,7 @@ const HEADERS = [
   "Rating Combination",
   "Assessment Rating",
   "Minimum Qualifications Rating",
-  "\n"
+  "\n",
 ];
 
 // TODO: the backend should send this and this function should go away
@@ -26,13 +26,13 @@ function getHurdleNorCode(hurdleResult) {
   return null;
 }
 
-export const exportResults = async hiringActionId => {
+export const exportResults = async (hiringActionId) => {
   const data = await getHiringActionResults(hiringActionId);
   let csv = "";
 
   csv += HEADERS.join(",");
 
-  data.forEach(row => {
+  data.forEach((row) => {
     const values = [
       row.staffing_vacancy_id,
       row.staffing_assessment_id,
@@ -45,7 +45,7 @@ export const exportResults = async hiringActionId => {
       row.staffing_rating_combination,
       getHurdleNorCode(row.hurdle_result),
       row.staffing_minimum_qualifications_rating,
-      "\n"
+      "\n",
     ];
     csv += values.join(",");
   });
