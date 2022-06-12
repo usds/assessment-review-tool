@@ -15,13 +15,13 @@
 
 .smeqa-rr-drawer {
   &__button {
-    background-color: color('white');
+    background-color: color("white");
     background-image: url("../img/drawer/minus-circle.svg");
     background-position: 2px units(1.5);
     background-size: units(2.5);
     padding: units(1.5) units(1.5) units(0.5) units(4);
-    @include u-font-size('body', 'lg');
-    color: color('primary');
+    @include u-font-size("body", "lg");
+    color: color("primary");
 
     &[aria-expanded="false"] {
       background-image: url("../img/drawer/plus-circle.svg");
@@ -29,8 +29,8 @@
     }
 
     &:hover {
-      background-color: color('white');
-      color: color('primary-dark');
+      background-color: color("white");
+      color: color("primary-dark");
     }
   }
 
@@ -46,8 +46,8 @@
     background-position: center left;
     background-size: units(2);
     padding: units(0.5) units(1) units(0.5) units(2.5);
-    @include u-font-size('body', '2xs');
-    color: color('primary');
+    @include u-font-size("body", "2xs");
+    color: color("primary");
 
     &[aria-expanded="false"] {
       background-image: url("../img/drawer/plus-circle.svg");
@@ -56,7 +56,7 @@
 
     &:hover {
       background-color: transparent;
-      color: color('primary-dark');
+      color: color("primary-dark");
     }
   }
 }

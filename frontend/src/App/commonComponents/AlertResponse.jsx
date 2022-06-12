@@ -16,22 +16,17 @@ import Alert from "./Alert";
  * @param {node} body  Text for the description
  */
 
-const TYPE_INFO         = 'info';
-const TYPE_SUCCESS      = 'success';
-const TYPE_ERROR        = 'error';
-const TYPE_WARNING      = 'warning';
+const TYPE_INFO = "info";
+const TYPE_SUCCESS = "success";
+const TYPE_ERROR = "error";
+const TYPE_WARNING = "warning";
 
 export default class AlertResponse extends React.Component {
   static propTypes = {
-    type: PropTypes.oneOf([
-      TYPE_INFO,
-      TYPE_SUCCESS,
-      TYPE_ERROR,
-      TYPE_WARNING
-    ]),
+    type: PropTypes.oneOf([TYPE_INFO, TYPE_SUCCESS, TYPE_ERROR, TYPE_WARNING]),
     title: PropTypes.string.isRequired,
     body: PropTypes.node.isRequired,
-    status: PropTypes.number
+    status: PropTypes.number,
   };
 
   getType() {
@@ -50,12 +45,16 @@ export default class AlertResponse extends React.Component {
       }
     }
 
-    return ( type )
+    return type;
   }
 
   render() {
-    return (
-      this.props.status === undefined ? null : <Alert type={this.getType()} title={this.props.title} body={this.props.body} />
+    return this.props.status === undefined ? null : (
+      <Alert
+        type={this.getType()}
+        title={this.props.title}
+        body={this.props.body}
+      />
     );
   }
 }

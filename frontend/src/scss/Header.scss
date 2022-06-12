@@ -4,7 +4,9 @@ $text-color: #fff;
 .smeqa-rr-nav {
   background-color: color($theme-color-primary-darker);
   color: $text-color;
-  font-family: Public Sans Web, Source Sans Pro Web, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: Public Sans Web, Source Sans Pro Web, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol;
 
   &__body {
     padding: 1.5rem 2rem;
@@ -14,7 +16,7 @@ $text-color: #fff;
   }
 
   .usa-header--basic &__bar {
-    @include at-media('tablet') {
+    @include at-media("tablet") {
       flex-grow: 1;
     }
   }
@@ -29,7 +31,7 @@ $text-color: #fff;
   }
 
   &__title {
-    @include u-font-size('body', 'lg');
+    @include u-font-size("body", "lg");
   }
 
   @media screen and (max-width: 425px) and (min-width: 321px) {
@@ -57,7 +59,7 @@ $text-color: #fff;
     }
   }
 
-  @media screen and (max-width: 660px) and (min-width: 426px){
+  @media screen and (max-width: 660px) and (min-width: 426px) {
     &__bar {
       width: 70%;
     }
@@ -65,7 +67,6 @@ $text-color: #fff;
     &__user {
       display: none;
     }
-
   }
 
   &__user {
@@ -81,5 +82,4 @@ $text-color: #fff;
     color: $text-color;
     padding: 0.25rem;
   }
-
 }

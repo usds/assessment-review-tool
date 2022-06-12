@@ -12,7 +12,7 @@ class TextInput extends React.Component {
     value: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
   };
 
   render() {
