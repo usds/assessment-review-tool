@@ -30,9 +30,9 @@ class ErrorPage extends React.Component {
       return;
     }
 
-    const primarySupportEmail = "kelvin.t.luu@omb.eop.gov";
+    const primarySupportEmail = "kelvin.t.luu2@omb.eop.gov";
     const secondarySupportEmails =
-      "neil.s.sharma@omb.eop.gov;william.slack@cms.hhs.gov";
+      "william.slack@cms.hhs.gov";
     const subject = "Resume Review - Support Request";
     const messageBody = `Error ID: ${errorId}%0D%0A%0D%0APlease describe the error you encountered:`;
     const mailToLink = `mailto:${primarySupportEmail}?subject=${subject}&cc=${secondarySupportEmails}&body=${messageBody}`;
