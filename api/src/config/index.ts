@@ -1,7 +1,5 @@
 import path from 'path';
 import fs from 'fs';
-// const REDSREGEX = /"uri": "(redis:\/\/.*)"/;
-const PSQLREGEX = /"uri": "(postgres:\/\/.*)"/;
 
 export interface OpenIDConfiguration {
   issuerDiscover: string;
@@ -59,7 +57,7 @@ const env = process.env.APP_ENV?.toString() || 'development';
 
 const dbURI: string =
   process.env.POSTGRES_URI ||
-  (process.env.VCAP_SERVICES && process.env.VCAP_SERVICES.match(PSQLREGEX)![1]) ||
+  (process.env.VCAP_SERVICES && JSON.parse(process.env.VCAP_SERVICES)["aws-rds"][0].credentials.uri) ||
   'postgres://docker_pg_user:docker_pg_pw@docker_db:5432/docker_db';
 
 const openIdConfig: OpenIDConfiguration = {
