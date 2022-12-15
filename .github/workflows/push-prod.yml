@@ -27,12 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
       # - uses: actions/cache@v2
       #   with:
       #     path: ~/.npm
@@ -65,7 +59,12 @@ jobs:
           path: ./api/src/client
           key: ${{ runner.os }}-frontend-src-prod-${{ hashFiles('./frontend/src/**/*', './frontend/package.json') }}
 
-      # Build frontend
+      # Build frontend (requires node 12)
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
       - name: Install frontend dependencies
         if: steps.frontend-npm-cache.outputs.cache-hit != 'true'
         run: npm ci
@@ -81,7 +80,12 @@ jobs:
         run: npm run build:prod
         working-directory: frontend
 
-      # Build backend
+      # Build backend (requires node 14)
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
       - name: Install dependencies
         if: steps.api-npm-cache.outputs.cache-hit != 'true'
         run: npm ci
