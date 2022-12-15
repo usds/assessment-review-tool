@@ -1,38 +1,20 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy Demo
 
-name: Deploy Prod
-
-# Controls when the workflow will run
 on:
-  push:
-    branches: [main]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      branch_name:
+        description: branch to deploy
+        required: true
 
-  # workflow_call:
-  #   secrets:
-  #     STAGE_CF_USERNAME:
-  #       description: cf-login username
-  #       required: true
-  #     STAGE_CF_PASSWORD:
-  #       description: cf-login password
-  #       required: true
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.branch_name }}
 
       - uses: actions/cache@v2
         id: api-npm-cache
@@ -52,15 +34,14 @@ jobs:
           path: ./frontend/src/styles/
           key: ${{ runner.os }}-frontend-scss-${{ hashFiles('./frontend/src/scss/**.scss') }}
 
-      # Notice that the cache for the frontend is actually in the api directory... where it dumps out after it's done.
+      # Notice that the cache for the frontend is actually in the api directory...
       - uses: actions/cache@v2
         id: frontend-src-cache
         with:
           path: ./api/src/client
-          key: ${{ runner.os }}-frontend-src-prod-${{ hashFiles('./frontend/src/**/*', './frontend/package.json') }}
+          key: ${{ runner.os }}-frontend-src-${{ hashFiles('./frontend/src/**/*', './frontend/package.json') }}
 
-      # Build frontend (requires node 12)
-      - uses: actions/checkout@v2
+      # Build frontend
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
@@ -77,11 +58,10 @@ jobs:
 
       - name: Build frontend
         if: steps.frontend-src-cache.outputs.cache-hit != 'true'
-        run: npm run build:prod
+        run: npm run build:stage
         working-directory: frontend
 
-      # Build backend (requires node 14)
-      - uses: actions/checkout@v2
+      # Build backend
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
@@ -101,9 +81,8 @@ jobs:
         uses: cloud-gov/cg-cli-tools@main
         with:
           cf_api: https://api.fr.cloud.gov
-          cf_username: ${{secrets.PROD_CF_USERNAME}}
-          cf_password: ${{secrets.PROD_CF_PASSWORD}}
+          cf_username: ${{secrets.STAGE_CF_USERNAME}}
+          cf_password: ${{secrets.STAGE_CF_PASSWORD}}
           cf_org: gsa-open-opportunities
           cf_space: USDS
-          cf_manifest: deployProd.yml
-          cf_command: push smeqa-rr -f deployProd.yml --strategy rolling -i 2
+          cf_manifest: deployDemo.yml
