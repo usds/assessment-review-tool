@@ -1,41 +1,20 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy Demo
 
-name: Deploy Stage
-
-# Controls when the workflow will run
 on:
-  push:
-    branches: [stage]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      branch_name:
+        description: branch to deploy
+        required: true
 
-  # workflow_call:
-  #   secrets:
-  #     STAGE_CF_USERNAME:
-  #       description: cf-login username
-  #       required: true
-  #     STAGE_CF_PASSWORD:
-  #       description: cf-login password
-  #       required: true
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ inputs.branch_name }}
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: ~/.npm
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
 
       - uses: actions/cache@v2
         id: api-npm-cache
@@ -62,7 +41,7 @@ jobs:
           path: ./api/src/client
           key: ${{ runner.os }}-frontend-src-${{ hashFiles('./frontend/src/**/*', './frontend/package.json') }}
 
-      # Build frontend (requires node 12)
+      # Build frontend
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
@@ -82,7 +61,7 @@ jobs:
         run: npm run build:stage
         working-directory: frontend
 
-      # Build backend (requires node 14)
+      # Build backend
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
@@ -98,15 +77,6 @@ jobs:
         run: npm run build
         working-directory: api
 
-      # - name: Update Login.gov creds on cloud.gov
-      #   uses: cloud-gov/cg-cli-tools@main
-      #   with:
-      #     cf_api: https://api.fr.cloud.gov
-      #     cf_username: ${{secrets.STAGE_CF_USERNAME}}
-      #     cf_password: ${{secrets.STAGE_CF_PASSWORD}}
-      #     cf_org: gsa-open-opportunities
-      #     cf_space: USDS
-      #     cf_command: cf set-env smeqa-staging LOGIN_KEY "${{secrets.STAGE_LOGIN_KEY_11_22_21}}"
       - name: Deploy to cloud.gov
         uses: cloud-gov/cg-cli-tools@main
         with:
@@ -115,4 +85,4 @@ jobs:
           cf_password: ${{secrets.STAGE_CF_PASSWORD}}
           cf_org: gsa-open-opportunities
           cf_space: USDS
-          cf_manifest: deployStage.yml
+          cf_manifest: deployDemo.yml

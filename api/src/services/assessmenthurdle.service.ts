@@ -109,6 +109,7 @@ export default class AssessmentHurdleService {
     if (!assessmentHurdle) throw new HttpException(404, `${hurdleId} not found`);
 
     const applicantsById = assessmentHurdle.Applicants.reduce((memo, a) => {
+      if (!a) { return memo };
       memo[a.id] = a.name!;
       return memo;
     }, {} as { [name: string]: string });
@@ -161,6 +162,7 @@ export default class AssessmentHurdleService {
         attributes: ['name', 'sort_order', 'id'],
       })
     ).reduce((memo, c) => {
+      if (!c) { return memo;}
       memo[c.id] = { name: c.name, sort_order: c.sort_order! };
       return memo;
     }, {} as { [competencyId: string]: { name: string; sort_order: number } });
