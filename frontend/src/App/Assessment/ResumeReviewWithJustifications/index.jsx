@@ -29,6 +29,8 @@ import Alert from "../../commonComponents/Alert";
 import PassFailCompetency from "../Competencies/PassFailCompetency";
 import Textarea from "../../commonComponents/Textarea";
 import PassFailJustification from "../Competencies/PassFailJustification";
+import UngradedCompetency from "../Competencies/UngradedCompetency";
+import { COMPETENCY_TYPES } from "../../../constants";
 
 const AssessmentAlert = (props) => {
   const { hiringActionId } = props;
@@ -98,7 +100,15 @@ const ResumeReviewContainer = withRouter((props) => {
     useSelector(selectCompetencies);
   const competencyEls = competencies
     .sort((a, b) => a.sort_order - b.sort_order)
-    .map((c) => <PassFailJustification id={c.id} key={c.id} />);
+    .map((c) => {
+      switch (c.competencyType){
+        case COMPETENCY_TYPES.DEFAULT: {return <PassFailJustification id={c.id} key={c.id} />;}
+        case COMPETENCY_TYPES.UNGRADED_COMMENTARY: {return <UngradedCompetency id={c.id} key={c.id} />;}
+        default: {throw new Error(`Unexpected Competency Type of ${c.competencyType}`);}
+
+      }
+    
+});
   const experienceEls = experienceCompetencies.map((c) => (
     <PassFailCompetency id={c.id} key={c.id} />
   ));

@@ -37,6 +37,7 @@ export const COMPETENCY_TYPES = {
   DEFAULT: 1,
   EXPERIENCE: 2,
   REQUIRE_JUSTIFICATION: 3,
+  UNGRADED_COMMENTARY: 4,
 };
 
 export const NO_EVIDENCE = "noEvidence";

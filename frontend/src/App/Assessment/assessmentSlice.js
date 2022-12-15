@@ -426,6 +426,7 @@ export const selectCompetencies = (state) => {
     (memo, c) => {
       switch (c.competencyType) {
         case COMPETENCY_TYPES.DEFAULT:
+        case COMPETENCY_TYPES.UNGRADED_COMMENTARY:
           memo[0].push(c);
           break;
         case COMPETENCY_TYPES.EXPERIENCE:
