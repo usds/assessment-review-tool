@@ -6,7 +6,6 @@ import {
   updateCompetencyDecision,
   isCompetencyEnabled,
   updateCompetencyEvaluationNote,
-  selectCompetencyResult,
 } from "../../assessmentSlice";
 import UngradedCompetency from "./UngradedCompetency";
 // import { COMPETENCY_TYPES } from "../../../../constants";
