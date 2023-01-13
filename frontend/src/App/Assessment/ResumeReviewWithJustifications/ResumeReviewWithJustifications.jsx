@@ -118,7 +118,7 @@ const ResumeReview = ({
               >
                 <p>
                   For each competency provide a rating and a short evidence based justification
-                  for why a candidate meets/exceeds/does not pass the required competency level.
+                  for why a candidate meets/exceeds/does not meet the required competency level.
                   See the 'competency definition' drop down for examples of ways to
                   meet/exceed competency requirements. Only candidates who meet or exceed all of
                   the competencies will move forward.
