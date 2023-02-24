@@ -80,7 +80,7 @@
     "passport": "^0.4.1",
     "passport-custom": "^1.1.1",
     "pg": "^8.5.1",
-    "sequelize": "^6.5.0",
+    "sequelize": "^6.29.0",
     "uuid": "^8.3.2",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
