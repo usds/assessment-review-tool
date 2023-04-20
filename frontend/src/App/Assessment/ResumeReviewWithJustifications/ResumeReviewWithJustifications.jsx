@@ -119,8 +119,8 @@ const ResumeReview = ({
                 <p>Completing a resume review involves the following steps:</p>
                 <ol>
                   <li>
-                    Find the applicant's resume in the email sent by the U.S. 
-                    Digital Corps team. There may be applicants with similar 
+                    Find the applicant's resume in the email sent by the
+                    coordinators. There may be applicants with similar
                     names — please ensure you have the right resume.
                   </li>
                   <li>
