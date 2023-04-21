@@ -119,19 +119,13 @@ const ResumeReview = ({
                 <p>Completing a resume review involves the following steps:</p>
                 <ol>
                   <li>
-                    Find the applicant's resume in the email sent by the
-                    coordinators. There may be applicants with similar
+                    Find the applicant's resume in the email sent by Digital Service
+                    at CMS. There may be applicants with similar
                     names — please ensure you have the right resume.
                   </li>
                   <li>
                     Align the browser window alongside the resume so that you can 
                     see both at the same time.
-                  </li>
-                  <li>
-                    Enter the candidate’s institution, degree program, field of study, 
-                    and graduation date for their most recent/current degree, as well 
-                    as the graduation month and year for their first degree. This data 
-                    will help us assess our recruitment efforts.
                   </li>
                   <li>
                     Review two pages of experience (starting with the first line of 
@@ -147,10 +141,13 @@ const ResumeReview = ({
                     to 52 weeks).
                   </li>
                   <li>
-                    Select "No" if the applicant's resume does not reflect a specific 
-                    competency. Under "Evaluation Justification," you will see text 
+                    Select "Yes" if the applicant's resume reflects a specific competency
+                    and indicate where in the resume you found support for your rating.
+                    Select "No" if the applicant's resume does not reflect any of the three specific
+                    competencies. Under "Evaluation Justification," you will see text
                     auto-populate (i.e., "Does not move forward…"). Provide any 
-                    additional information necessary to help others retrace your decision.
+                    additional information necessary to help others retrace your decision for
+                    all three of the unmet competencies.
                   </li>
                   <li>
                     Click "Finish Review" to move to the next applicant.
