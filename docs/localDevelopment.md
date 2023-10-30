@@ -1,5 +1,6 @@
 # Local Development:
 
+- jq
 - docker
 
 ### Useful tools
@@ -16,11 +17,11 @@ docker compose up # this will start postgres, a frontend react server, and the b
 (cd ./api/agencyInfo/ && ./localHiringAction.sh) # this will populate your database wtih the basic demo application.
 ```
 
-Testing:
+<!-- Testing:
 
 ```sh
 docker compose run --rm api npm run test
-```
+``` -->
 
 Clean up:
 

@@ -26,6 +26,6 @@ Once submitted, the evaluation with any reasons provided will then be reviewed a
 
 The caching is fairly aggressive for the build process. This might cause some issues later...
 
-[Prod: main](https://smeqa-rr.app.cloud.gov)
+[Prod: main](https://smeqa-rr-tool.app.cloud.gov)
 [Stage: Stage](https://smeqa-staging.app.cloud.gov)
 [~Demo:~](https://smeqa-demo.app.cloud.gov)

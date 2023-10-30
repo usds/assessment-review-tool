@@ -18,7 +18,7 @@
     "tunnel": "myapp_guid=$(cf app --guid $APP_NAME) && TUNNEL=$(cf curl /v2/apps/$myapp_guid/env | jq -r '[.system_env_json.VCAP_SERVICES.\"aws-rds\"[0].credentials | .host, .port] | join(\":\")') && echo 'Rat tunnel active' &&cf ssh -N -L 5432:$TUNNEL $APP_NAME",
     "tunnel:stage": "APP_NAME=smeqa-staging npm run tunnel",
     "tunnel:demo": "APP_NAME=smeqa-demo npm run tunnel",
-    "tunnel:prod": "APP_NAME=smeqa-rr npm run tunnel",
+    "tunnel:prod": "APP_NAME=smeqa-rr-tool npm run tunnel",
     "watch": "tsc -w -p ."
   },
   "keywords": [],
