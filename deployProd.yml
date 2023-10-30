@@ -28,4 +28,4 @@ applications:
     buildpack: nodejs_buildpack
     stack: cflinuxfs4
     services:
-      - smeqa-prod-db
+      - smeqa-stage-db
