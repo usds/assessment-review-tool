@@ -26,6 +26,6 @@ applications:
     #     tracing:
     #       enable_zipkin: true
     buildpack: nodejs_buildpack
-    stack: cflinuxfs3
+    stack: cflinuxfs4
     services:
       - smeqa-prod-db
