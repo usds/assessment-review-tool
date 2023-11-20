@@ -84,8 +84,5 @@
     "uuid": "^8.3.2",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
-  },
-  "engines": {
-    "node": "18.18.2"
   }
 }
