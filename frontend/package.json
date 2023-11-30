@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "npm run build:prod",
-    "build:styles": "sass -q -I ./src/scss -I ./node_modules/uswds/dist/scss/ --style=compressed src/scss/App.scss:src/styles/ ",
+    "build:styles": "sass -q --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ --style=compressed -o src/styles/ src/scss/App.scss",
     "build:prod": "REACT_APP_ENV=production npm run build:assets",
     "build:stage": "REACT_APP_ENV=staging npm run build:assets",
     "build:finish": "rm -rf ../api/src/client && mkdir -p ../api/src/client/ && mv build/* ../api/src/client/",
@@ -34,7 +34,7 @@
     "start-js": "INLINE_RUNTIME_CHUNK=false react-scripts start",
     "start-js:dev": "INLINE_RUNTIME_CHUNK=false REACT_APP_ENV=staging react-scripts start",
     "test": "react-scripts test",
-    "watch-css": "npm run build:styles && sass -I ./src/scss -I ./node_modules/uswds/dist/scss/ --watch --recursive src/scss/App.scss:src/styles/ ",
+    "watch-css": "npm run build:styles && sass --include-path ./src/scss --include-path ./node_modules/uswds/dist/scss/ -o src/styles/ --watch --recursive src/scss/App.scss",
     "build:development": "npm run build:styles && bash ./scripts/build.sh --env production",
     "lint:check": "npm prettier --check .",
     "lint:fix": "npm prettier --write ."
