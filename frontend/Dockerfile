@@ -1,4 +1,4 @@
-FROM node:12.16.2 AS builder
+FROM node:14.21.3 AS builder
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # set working directory
