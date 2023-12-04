@@ -39,6 +39,7 @@ export default class DB implements DBInterface {
         createdAt: 'created_at',
         timestamps: false,
       },
+      ssl: false
     });
     try {
       initModels(this.sequelize);
@@ -83,7 +84,7 @@ export default class DB implements DBInterface {
   public async query<T extends object>(
     sql: string | { query: string; values: unknown[] },
     options: QueryOptionsWithType<QueryTypes.SELECT> & { plain: true },
-  ): Promise<T> {
+  ): Promise<T>  {
     return this.sequelize.query(sql, options);
   }
 
