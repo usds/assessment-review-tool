@@ -11,7 +11,7 @@ applications:
       OPTIMIZE_MEMORY: true
       TZ: America/New_York
       AUTH_CALLBACK_ROOT_URL: https://smeqa-usdc-staging.fr.cloud.gov
-      LOG_LEVEL: trace
+      LOG_LEVsmeEL: trace
       REDIRECT_URI: https://smeqa-usdc-staging.fr.cloud.gov/login/auth
     command: node server.js
     type: nodejs
@@ -21,6 +21,6 @@ applications:
     #     tracing:
     #       enable_zipkin: true
     buildpack: nodejs_buildpack
-    stack: cflinuxfs3
+    stack: cflinuxfs4
     services:
       - smeqa-rr-db-stage
