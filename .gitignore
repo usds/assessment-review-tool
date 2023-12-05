@@ -32,4 +32,6 @@ api/coverage
 api/tmp
 api/logs
 
+assessmentHurdleExamples/last_run_ha_id.txt
+
 frontend/src/styles/app.css
