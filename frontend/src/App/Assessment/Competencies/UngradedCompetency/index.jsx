@@ -29,7 +29,7 @@ const UngradedCompetencyContainer = ({ id }) => {
   let competencyIsFailing = false;
 
   const selectors = [...allSelectors]
-    .sort((sa, sb) => sb.sort_order - sa.sort_order)
+    .sort(({ sort_order: soa }, { sort_order: sob }) => soa - sob)
     .map((s) => {
       return {
         label: s.display_name,

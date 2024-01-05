@@ -60,9 +60,8 @@ const ResumeReview = ({
 
       <form
         name="sme-rr"
-        className={`usa-form smeqa-rr-form ${
-          isFormDisabled ? "is-disabled" : ""
-        }`}
+        className={`usa-form smeqa-rr-form ${isFormDisabled ? "is-disabled" : ""
+          }`}
         id="smeqa-rr-form"
         onSubmit={handleSubmitReview}
         noValidate
@@ -99,12 +98,12 @@ const ResumeReview = ({
                   type="info"
                   title="Tie-breaker"
                   body="The following statements require a tie-breaker."
-                  // body={
-                  //   // <div>
-                  //   //   {/* <h4>Evaluation notes for this candidate:</h4>
-                  //   //   {applicationNoteElements} */}
-                  //   // </div>
-                  // }
+                // body={
+                //   // <div>
+                //   //   {/* <h4>Evaluation notes for this candidate:</h4>
+                //   //   {applicationNoteElements} */}
+                //   // </div>
+                // }
                 ></Alert>
               </div>
             </div>
@@ -119,48 +118,51 @@ const ResumeReview = ({
                 <p>Completing a resume review involves the following steps:</p>
                 <ol>
                   <li>
-                    Find the applicant's resume in the email sent by Digital Service
-                    at CMS. There may be applicants with similar
+                    Find the applicant's resume in the email sent by the U.S.
+                    Digital Corps team. There may be applicants with similar
                     names — please ensure you have the right resume.
                   </li>
                   <li>
-                    Align the browser window alongside the resume so that you can 
+                    Align the browser window alongside the resume so that you can
                     see both at the same time.
                   </li>
                   <li>
-                    Review two pages of experience (starting with the first line of 
-                    experience) to assess if they meet the minimum qualifications with 
-                    experience. Look for evidence of each competency in their resume — 
-                    use the experience they describe in their resume rather than searching 
+                    Enter the candidate’s institution, degree program, field of study,
+                    and graduation date for their most recent/current degree, as well
+                    as the graduation month and year for their first degree. This data
+                    will help us assess our recruitment efforts.
+                  </li>
+                  <li>
+                    Review two pages of experience (starting with the first line of
+                    experience) to assess if they meet the minimum qualifications with
+                    experience. Look for evidence of each competency in their resume —
+                    use the experience they describe in their resume rather than searching
                     for keywords.
                   </li>
                   <li>
-                    Select "Yes" if the applicant’s resume reflects a given competency. 
-                    Under "Evaluation Justification," indicate where in the resume you 
-                    found support for your rating (i.e., the role and/or year that add 
+                    Select "Yes" if the applicant’s resume reflects a given competency.
+                    Under "Evaluation Justification," indicate where in the resume you
+                    found support for your rating (i.e., the role and/or year that add
                     to 52 weeks).
                   </li>
                   <li>
-                    Select "Yes" if the applicant's resume reflects a specific competency
-                    and indicate where in the resume you found support for your rating.
-                    Select "No" if the applicant's resume does not reflect any of the three specific
-                    competencies. Under "Evaluation Justification," you will see text
-                    auto-populate (i.e., "Does not move forward…"). Provide any 
-                    additional information necessary to help others retrace your decision for
-                    all three of the unmet competencies.
+                    Select "No" if the applicant's resume does not reflect a specific
+                    competency. Under "Evaluation Justification," you will see text
+                    auto-populate (i.e., "Does not move forward…"). Provide any
+                    additional information necessary to help others retrace your decision.
                   </li>
                   <li>
                     Click "Finish Review" to move to the next applicant.
                   </li>
                   <li>
-                    Keep working through the applicants. Click "Exit Review" at the 
-                    top of the page to stop at any time. Incomplete reviews will not 
+                    Keep working through the applicants. Click "Exit Review" at the
+                    top of the page to stop at any time. Incomplete reviews will not
                     be saved on exit.
                   </li>
                   <li>
-                    If you have questions or are unsure about a specific applicant’s 
-                    review, click the “Flag applicant for HR” button to contact a 
-                    member of the USDC team for assistance. Flagging removes the 
+                    If you have questions or are unsure about a specific applicant’s
+                    review, click the “Flag applicant for HR” button to contact a
+                    member of the USDC team for assistance. Flagging removes the
                     applicant from everyone’s queue.
                   </li>
                 </ol>

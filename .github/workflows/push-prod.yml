@@ -107,4 +107,4 @@ jobs:
           cf_org: gsa-open-opportunities
           cf_space: USDS
           cf_manifest: deployProd.yml
-          cf_command: push smeqa-rr-tool -f deployProd.yml --strategy rolling -i 2
+          cf_command: push assessment-tool -f deployProd.yml --strategy rolling -i 2

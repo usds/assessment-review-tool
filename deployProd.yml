@@ -1,14 +1,14 @@
 version: 1
 applications:
-  - name: smeqa-rr-tool
+  - name: assessment-tool
     instances: 2
     memory: 128MB
     #health-check-type: http
     #health-check-http-endpoint: /api/admin/health
     env:
       APP_ENV: production # this is used to point to different APIs/DBs/etc
-      AUTH_CALLBACK_URL_ROOT: https://smeqa-rr-tool.app.cloud.gov
-      REDIRECT_URI: https://smeqa-rr-tool.app.cloud.gov/login/auth
+      AUTH_CALLBACK_URL_ROOT: https://assessment-tool.app.cloud.gov
+      REDIRECT_URI: https://assessment-tool.app.cloud.gov/login/auth
       ISSUER_DISCOVER: https://secure.login.gov
       NODE_ENV: production
       OPTIMIZE_MEMORY: true
@@ -28,4 +28,4 @@ applications:
     buildpack: nodejs_buildpack
     stack: cflinuxfs4
     services:
-      - smeqa-stage-db
+      - assessment-tool-db

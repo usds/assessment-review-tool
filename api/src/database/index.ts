@@ -3,6 +3,7 @@ import { dbURI, env } from '../config';
 import { logger } from '../utils/logger';
 import { initModels } from '../models/init-models';
 
+
 logger.info(`Database Connection for "${env}" set to ${dbURI.match(/@(.*)/)![0]}`);
 
 export interface DBInterface {
@@ -39,9 +40,12 @@ export default class DB implements DBInterface {
         createdAt: 'created_at',
         timestamps: false,
       },
+      dialect: "postgres",
+      // https://node-postgres.com/features/ssl
+      // https://sequelize.org/docs/v6/other-topics/dialect-specific-things/
       dialectOptions: {
-        ssl: {
-          rejectUnauthorized: false
+        ssl:{
+          rejectUnauthorized: false,
         }
       }
     });
@@ -89,7 +93,7 @@ export default class DB implements DBInterface {
     sql: string | { query: string; values: unknown[] },
     options: QueryOptionsWithType<QueryTypes.SELECT> & { plain: true },
   ): Promise<T> {
-    return this.sequelize.query(sql, options);
+    return this.sequelize.query(sql, options) as T;
   }
 
   public async auditQuery(sql: string): Promise<void> {

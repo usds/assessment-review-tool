@@ -10,7 +10,7 @@ import session from 'express-session';
 import passport from 'passport';
 
 import DB from './database';
-import { dbURI, sessionConfig, buildVersion } from './config';
+import { sessionConfig, buildVersion } from './config';
 import { logger, stream } from './utils/logger';
 
 import Routes from './interfaces/routes.interface';
@@ -20,6 +20,7 @@ import AuthenticationRouter from './routes/authentication.routes';
 import AuthenticationMiddleware from './middlewares/auth.middleware';
 import authSetup from './auth';
 import HttpException from './exceptions/HttpException';
+import CreatePool from './database/sessionDb';
 
 export default class App {
   app: express.Application;
@@ -100,7 +101,7 @@ export default class App {
     sc.setStore(
       new pgSession({
         createTableIfMissing: true,
-        conString: dbURI,
+        pool: CreatePool(),
         errorLog: logger.error,
       }),
     );

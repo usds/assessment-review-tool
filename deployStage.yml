@@ -1,6 +1,6 @@
 version: 1
 applications:
-  - name: smeqa-usdc-staging
+  - name: assessment-staging
     instances: 1
     memory: 128MB
     #health-check-type: http
@@ -10,9 +10,9 @@ applications:
       APP_ENV: staging
       OPTIMIZE_MEMORY: true
       TZ: America/New_York
-      AUTH_CALLBACK_ROOT_URL: https://smeqa-usdc-staging.fr.cloud.gov
-      LOG_LEVsmeEL: trace
-      REDIRECT_URI: https://smeqa-usdc-staging.fr.cloud.gov/login/auth
+      AUTH_CALLBACK_ROOT_URL: https://assessment-staging.app.cloud.gov
+      LOG_LEVEL: trace
+      REDIRECT_URI: https://assessment-staging.app.cloud.gov/login/auth
     command: node server.js
     type: nodejs
     path: ./api/build
@@ -23,4 +23,4 @@ applications:
     buildpack: nodejs_buildpack
     stack: cflinuxfs4
     services:
-      - smeqa-rr-db-stage
+      - assessment-staging-db
