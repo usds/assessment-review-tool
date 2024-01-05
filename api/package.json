@@ -79,7 +79,7 @@
     "openid-client": "^4.7.4",
     "passport": "^0.4.1",
     "passport-custom": "^1.1.1",
-    "pg": "^8.5.1",
+    "pg": "^8.11.3",
     "sequelize": "^6.5.0",
     "uuid": "^8.3.2",
     "winston": "^3.3.3",
