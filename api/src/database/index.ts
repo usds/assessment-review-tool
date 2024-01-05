@@ -47,7 +47,7 @@ export default class DB implements DBInterface {
       dialectOptions: {
         ssl:{
           rejectUnauthorized: false,
-          ca: fs.readFileSync(path.join(__dirname,".global-bundle.crt")).toString(),
+          ca: fs.readFileSync(path.join(__dirname,"global-bundle.crt")).toString(),
         }
       }
     });
