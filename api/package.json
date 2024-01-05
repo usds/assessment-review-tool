@@ -9,7 +9,7 @@
     "test:integration": "NODE_ENV=development jest --runInBand --detectOpenHandles ./src/tests/integration.tests",
     "test:queue": "NODE_ENV=development jest --runInBand --detectOpenHandles ./src/tests/integration.tests/assignmentsQueue.int.spec.ts",
     "build": "rm -rf build/ && tsc -p . && npm run build:assets",
-    "build:assets": "cp package*.json build/ && cp -pR src/client build/client && cp src/database/global-bundle.crt build/database/global-bundle.crt",
+    "build:assets": "cp package*.json build/ && cp -pR src/client build/client",
     "build:vendorDependencies": "npm run build && cp -pR node_modules build",
     "dev": "nodemon --watch 'src/**/*.ts' --exec node --inspect=0.0.0.0:9229 -r ts-node/register src/server.ts",
     "start": "node server.js",
