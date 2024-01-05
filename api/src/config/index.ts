@@ -62,7 +62,7 @@ const dbURI: string =
 
 const openIdConfig: OpenIDConfiguration = {
   issuerDiscover: process.env.ISSUER_DISCOVER || 'https://idp.int.identitysandbox.gov/.well-known/openid-configuration',
-  clientId: process.env.CLIENT_ID || 'urn:gov:gsa:openidconnect.profiles:sp:sso:opm_usds:sme_qa',
+  clientId: process.env.CLIENT_ID || 'urn:gov:gsa:openidconnect.profiles:sp:sso:opm_usds:smeqa_staging',
   redirectUri: process.env.REDIRECT_URI || 'http://localhost:9000/login/auth',
   secretKey: process.env.LOGIN_KEY || '',
 };

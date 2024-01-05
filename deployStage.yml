@@ -10,9 +10,9 @@ applications:
       APP_ENV: staging
       OPTIMIZE_MEMORY: true
       TZ: America/New_York
-      AUTH_CALLBACK_ROOT_URL: https://assessment-staging.fr.cloud.gov
+      AUTH_CALLBACK_ROOT_URL: https://assessment-staging.app.cloud.gov
       LOG_LEVEL: trace
-      REDIRECT_URI: https://assessment-staging.fr.cloud.gov/login/auth
+      REDIRECT_URI: https://assessment-staging.app.cloud.gov/login/auth
     command: node server.js
     type: nodejs
     path: ./api/build
