@@ -4,8 +4,8 @@ import { dbURI, env } from '../config';
 // We had to change this out for the conn string in postgres 15+
 // https://node-postgres.com/features/ssl
 
-function CreatePool(){
-    new Pool({
+ function CreatePool(){
+    return new Pool({
     connectionString: dbURI,
     max:20,
     idleTimeoutMillis:60000,
