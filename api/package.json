@@ -63,7 +63,7 @@
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "compression": "^1.7.4",
-    "connect-pg-simple": "^6.2.1",
+    "connect-pg-simple": "^9.0.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

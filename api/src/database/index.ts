@@ -2,8 +2,6 @@ import Sequelize, { QueryOptionsWithType, QueryTypes, Transaction } from 'sequel
 import { dbURI, env } from '../config';
 import { logger } from '../utils/logger';
 import { initModels } from '../models/init-models';
-import * as fs from 'fs';
-import * as path from 'path';
 
 
 logger.info(`Database Connection for "${env}" set to ${dbURI.match(/@(.*)/)![0]}`);
@@ -44,6 +42,7 @@ export default class DB implements DBInterface {
       },
       dialect: "postgres",
       // https://node-postgres.com/features/ssl
+      // https://sequelize.org/docs/v6/other-topics/dialect-specific-things/
       dialectOptions: {
         ssl:{
           rejectUnauthorized: false,
