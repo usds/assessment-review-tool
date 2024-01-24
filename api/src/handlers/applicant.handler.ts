@@ -132,11 +132,18 @@ export default class ApplicantHandler {
     try {
       // @ts-ignore
       const filePath = req.files[0].path;
-      logger.debug(`Processing file at location ${path.resolve(filePath)}`);
+      logger.debug(`Processing applicant file at location ${path.resolve(filePath)}`);
       const validatedBulkApplicants: BulkUSASApplicationsDto = await USASCsvReader.parseFile(filePath);
+      logger.debug("File parsed");
+
       const created: Applicant[] = await this.applicantSvc.bulkUSASUpsert(validatedBulkApplicants, assessmentHurdleId);
+      logger.debug("Applicants Uploaded");
+
       res.status(201).json({ data: created, message: 'created' });
+
     } catch (error) {
+      logger.debug(JSON.stringify(error));
+
       next(error);
     }
   };
