@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "babel-plugin-macros": "^2.8.0",
-    "cookiejar": "^2.1.2",
+    "cookiejar": "^2.1.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
