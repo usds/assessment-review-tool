@@ -113,6 +113,6 @@ jobs:
           cf_api: https://api.fr.cloud.gov
           cf_username: ${{secrets.STAGE_CF_USERNAME}}
           cf_password: ${{secrets.STAGE_CF_PASSWORD}}
-          cf_org: gsa-open-opportunities
-          cf_space: USDS
+          cf_org: gsa-tts-usdc
+          cf_space: staging
           cf_manifest: deployStage.yml
