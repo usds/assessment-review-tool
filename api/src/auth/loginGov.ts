@@ -16,10 +16,10 @@ async function generateStrategy() {
   logger.info(JSON.stringify(openIdConfig))
   logger.info(JSON.stringify(jose.JWK.asKey(secretKey, 'pem')));
   const issuer = await Issuer.discover(openIdConfig.issuerDiscover)
+  logger.info(`OpenId Issuer set to ${issuer.issuer}`);
   const key = await jose.JWK.asKey(secretKey, 'pem');
   logger.info(`Key successfully read`);
   logoutObject.issuer = issuer;
-  logger.info(`OpenId Issuer set to ${issuer.issuer}`);
 
   const clientOptions: ClientMetadata = {
     client_id: openIdConfig.clientId,
