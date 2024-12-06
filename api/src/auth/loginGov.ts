@@ -13,11 +13,13 @@ const logoutObject: { issuer: Issuer<Client> | null } = { issuer: null };
 async function generateStrategy() {
   const userService = new UserService();
   const secretKey = openIdConfig.secretKey;
-  const [key, issuer] = await Promise.all([jose.JWK.asKey(secretKey, 'pem'), Issuer.discover(openIdConfig.issuerDiscover)]);
-  logger.info(`Key successfully read`);
-
-  logoutObject.issuer = issuer;
+  logger.info(JSON.stringify(openIdConfig))
+  logger.info(JSON.stringify(jose.JWK.asKey(secretKey, 'pem')));
+  const issuer = await Issuer.discover(openIdConfig.issuerDiscover)
   logger.info(`OpenId Issuer set to ${issuer.issuer}`);
+  const key = await jose.JWK.asKey(secretKey, 'pem');
+  logger.info(`Key successfully read`);
+  logoutObject.issuer = issuer;
 
   const clientOptions: ClientMetadata = {
     client_id: openIdConfig.clientId,
