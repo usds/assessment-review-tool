@@ -104,7 +104,7 @@ jobs:
           cf_api: https://api.fr.cloud.gov
           cf_username: ${{secrets.PROD_CF_USERNAME}}
           cf_password: ${{secrets.PROD_CF_PASSWORD}}
-          cf_org: gsa-open-opportunities
-          cf_space: USDS
+          cf_org: gsa-tts-usdc
+          cf_space: prod
           cf_manifest: deployProd.yml
           cf_command: push assessment-tool -f deployProd.yml --strategy rolling -i 2
