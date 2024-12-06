@@ -10,9 +10,9 @@ applications:
       APP_ENV: staging
       OPTIMIZE_MEMORY: true
       TZ: America/New_York
-      AUTH_CALLBACK_ROOT_URL: https://smeqa-staging.app.cloud.gov
+      AUTH_CALLBACK_ROOT_URL: https://smeqa-stagingsmeqa-.app.cloud.gov
       LOG_LEVEL: trace
-      REDIRECT_URI: https://smeqa-staging.app.cloud.gov/login/auth
+      REDIRECT_URI: https://smeqa-stagingsmeqa-.app.cloud.gov/login/auth
     command: node server.js
     type: nodejs
     path: ./api/build
