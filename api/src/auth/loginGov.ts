@@ -13,9 +13,9 @@ const logoutObject: { issuer: Issuer<Client> | null } = { issuer: null };
 async function generateStrategy() {
   const userService = new UserService();
   const secretKey = openIdConfig.secretKey;
+  logger.info(JSON.stringify(openIdConfig));
   const [key, issuer] = await Promise.all([jose.JWK.asKey(secretKey, 'pem'), Issuer.discover(openIdConfig.issuerDiscover)]);
   logger.info(`Key successfully read`);
-
   logoutObject.issuer = issuer;
   logger.info(`OpenId Issuer set to ${issuer.issuer}`);
 
