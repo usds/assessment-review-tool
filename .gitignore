@@ -1,6 +1,7 @@
 .env
 .vscode
 .DS_Store
+local_env.sh
 
 node_modules/
 

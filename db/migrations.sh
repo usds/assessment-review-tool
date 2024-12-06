@@ -1,4 +1,6 @@
 #!/bin/bash
+# Create a local_env.sh file with the following field for the appropriate postgres server:
+# export POSTGRES=
 . ./local_env.sh
 echo ${POSTGRES}
 psql ${POSTGRES} -a -f ./migrations/01_drop_table.sql
