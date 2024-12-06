@@ -51,6 +51,7 @@ export default async function authSetup() {
     logger.debug(oidcLoa1Strat);
   } catch (err) {
     logger.error('Error setting up login.gov');
+    logger.error('Are your security-groups right?');
     logger.error(JSON.stringify(err));
   }
   passport.use('token-login', demoStrategy);
