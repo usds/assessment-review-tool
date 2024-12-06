@@ -50,6 +50,7 @@ export default async function authSetup() {
     passport.use('oidc-loa-1', oidcLoa1Strat);
   } catch (err) {
     logger.error('Error setting up login.gov');
+    logger.error(JSON.stringify(err));
   }
   passport.use('token-login', demoStrategy);
 }
