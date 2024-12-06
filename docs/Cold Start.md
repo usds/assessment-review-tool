@@ -1,4 +1,8 @@
 Cold Start:
+
+To change your space or org for the cloud foundry session:
+`$ cf target -o gsa-tts-usdc -s prod`
+
 1. Cloud.gov: Create application shell with APP_NAME
     - APP_NAME will be the application name
     - The shell is the empty cloud.gov instance
@@ -7,11 +11,14 @@ Cold Start:
     - RDS psql
     - Bind to application created in step 1 - no parameters
         - if this fails, follow the binding steps in `db/README.md`
-    - For prod, ensure it's redundant
+    - For prod, ensure it's `small-redundant`
 3. Ensure that you have the correct permissions:
     - Space needs to have "trusted local_networks_egress" security group
     - to see secuirty groups for your space: `$ cf space <space> `
-    - to update them: <EXERCISE LEFT FOR USER> 
+    - you need `public_networks_egress` to be part of the running security group.
+    - To update this: use the following example: 
+        `cf bind-security-group public_networks_egress gsa-tts-usdc --space staging`
+        `cf bind-security-group public_networks_egress <ORG> --space <SPACE>`
 4. Create Github action deployment secrets:
     - ```sh
         $ export SPACE_DEPLOYER_NAME=<SERVICE_ACCOUNT_NAME>
@@ -21,9 +28,10 @@ Cold Start:
     ```
         - This will output the CF_USERNAME and CF_PASSWORD
 5. Add service keys to github actions
-    - set CF_USERNAME and CF_PASSWORD to {env}_CF_PASSWORD and {env}_CF_USERNAME in github
+    - set CF_USERNAME and CF_PASSWORD to {env}_CF_PASSWORD and {env}_CF_USERNAME in github actions
     - these are referenced in `.github/workflows`
     - ensure correct `organization` and `space` in `.github/workflows`
+    - if the workflow uses `cf_command`, ensure that it is pushing to the correct app
     - ensure correct `name` `urls` and `services` in `.deploy${ENV}`
     - ensure buildpack supports your node version in `api/package.json` https://github.com/cloudfoundry/nodejs-buildpack/releases
 6. Run a deployment
