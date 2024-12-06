@@ -48,8 +48,10 @@ export default async function authSetup() {
   try {
     const oidcLoa1Strat = await generateStrategy();
     passport.use('oidc-loa-1', oidcLoa1Strat);
+
   } catch (err) {
-    logger.error('Error setting up login.gov');
+    logger.error('Error setting up login.gov' );
+    logger.error(JSON.stringify(err));
   }
   passport.use('token-login', demoStrategy);
 }
